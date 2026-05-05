@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madfu — Merchant Onboarding Redesign · Rana Allam</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Password gate: hide body until unlocked -->
+  <script>
+    if (sessionStorage.getItem('merchant_unlocked') !== '1') {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('pw-gate').style.display = 'flex';
+        document.getElementById('pw-input').focus();
+      });
+    }
+    function checkPassword() {
+      var val = document.getElementById('pw-input').value;
+      if (val === 'dashboard') {
+        sessionStorage.setItem('merchant_unlocked', '1');
+        document.getElementById('pw-gate').style.display = 'none';
+      } else {
+        document.getElementById('pw-error').style.display = 'block';
+        document.getElementById('pw-input').style.borderColor = '#ff6b6b';
+        document.getElementById('pw-input').value = '';
+        document.getElementById('pw-input').focus();
+      }
+    }
+  </script>
+</head>
+<body class="cs-page">
+
+  <!-- ── PASSWORD GATE ── -->
+  <div id="pw-gate" style="
+    display: none;
+    position: fixed; inset: 0; z-index: 9999;
+    background: #0F0B15;
+    flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 24px; padding: 24px;
+  ">
+    <img src="IMGs/Pasword.webp" alt="Rana Allam" style="height: 48px;" />
+    <div style="text-align: center; max-width: 360px;">
+      <h2 style="color: #fff; font-family: Inter, sans-serif; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px;">Protected Case Study</h2>
+      <p style="color: rgba(255,255,255,.5); font-family: Inter, sans-serif; font-size: .9rem; margin: 0 0 24px;">Enter the password to view this case study.</p>
+      <input
+        id="pw-input"
+        type="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        style="
+          width: 100%; box-sizing: border-box;
+          padding: 12px 16px; border-radius: 10px;
+          border: 1px solid rgba(255,255,255,.15);
+          background: rgba(255,255,255,.06);
+          color: #fff; font-family: Inter, sans-serif; font-size: 1rem;
+          outline: none; margin-bottom: 12px;
+          transition: border-color .2s;
+        "
+        onkeydown="if(event.key==='Enter') checkPassword()"
+        onfocus="this.style.borderColor='#7B2FBE'"
+        onblur="this.style.borderColor='rgba(255,255,255,.15)'"
+      />
+      <p id="pw-error" style="
+        color: #ff6b6b; font-family: Inter, sans-serif;
+        font-size: .85rem; margin: 0 0 12px; display: none;
+      ">Incorrect password. Please try again.</p>
+      <button
+        onclick="checkPassword()"
+        style="
+          width: 100%; padding: 13px; border-radius: 10px;
+          background: #7B2FBE; border: none; color: #fff;
+          font-family: Inter, sans-serif; font-size: 1rem; font-weight: 600;
+          cursor: pointer; transition: background .2s;
+        "
+        onmouseover="this.style.background='#9B4FDE'"
+        onmouseout="this.style.background='#7B2FBE'"
+      >Unlock</button>
+    </div>
+  </div>
+
+  <!-- ── NAV ── -->
+  <header class="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="IMGs/My Logo@4x.webp" alt="Rana Allam" />
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="index.html#work">Portfolio</a>
+      <a href="#contact" class="btn btn--hire">Hire Me</a>
+    </nav>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="cs-hero">
+    <div class="cs-hero__inner">
+      <div class="cs-hero__meta">
+        <span class="cs-tag">Case Study</span>
+        <span class="cs-tag cs-tag--dim">Fintech · B2B · Merchant Onboarding</span>
+      </div>
+      <h1 class="cs-hero__title">Madfu — Redesigning the<br/>Merchant Onboarding Flow</h1>
+      <p class="cs-hero__sub">
+        A manual, multi-day process was causing merchants to drop off before ever going live.
+        Here's how replacing every human verification step with a real-time API rebuilt the entire onboarding experience from scratch.
+      </p>
+
+      <div class="cs-hero__stats">
+        <div class="cs-stat">
+          <span class="cs-stat__label">Before</span>
+          <span class="cs-stat__value cs-stat__value--muted">Days</span>
+        </div>
+        <div class="cs-stat__arrow">→</div>
+        <div class="cs-stat">
+          <span class="cs-stat__label">After</span>
+          <span class="cs-stat__value cs-stat__value--green">&lt; 10 min</span>
+        </div>
+        <div class="cs-stat cs-stat--divider">
+          <span class="cs-stat__label">API Integrations</span>
+          <span class="cs-stat__value cs-stat__value--purple">11</span>
+        </div>
+        <div class="cs-stat cs-stat--divider">
+          <span class="cs-stat__label">Onboarding Stages</span>
+          <span class="cs-stat__value cs-stat__value--purple">4</span>
+        </div>
+      </div>
+
+      <div class="cs-hero__details">
+        <div class="cs-detail">
+          <span class="cs-detail__label">Role</span>
+          <span class="cs-detail__value">Product Design Lead</span>
+        </div>
+        <div class="cs-detail">
+          <span class="cs-detail__label">Scope</span>
+          <span class="cs-detail__value">UX Design · Flow Architecture · UX Copywriting</span>
+        </div>
+        <div class="cs-detail">
+          <span class="cs-detail__label">Stakeholders</span>
+          <span class="cs-detail__value">COO · Marketing</span>
+        </div>
+        <div class="cs-detail">
+          <span class="cs-detail__label">Team</span>
+          <span class="cs-detail__value">Product Design Lead · 2 Product Managers</span>
+        </div>
+        <div class="cs-detail">
+          <span class="cs-detail__label">Surfaces</span>
+          <span class="cs-detail__value">Merchant Website · Lead Gen Flow · Offer Screen · Self-Onboarding Portal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HERO COVER IMAGE ── -->
+  <div class="cs-full-image">
+    <img
+      src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/Master.webp"
+      alt="Madfu Merchant Onboarding — case study hero"
+      class="cs-full-image__img"
+    />
+  </div>
+
+  <!-- ── BODY ── -->
+  <article class="cs-body">
+
+    <!-- 01 · Context -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">01 — Context</div>
+        <h2 class="cs-section__title">The Problem With Signing Up a Merchant</h2>
+        <p>Getting a business onto Madfu as a merchant partner used to take days.</p>
+        <p>Not because the requirements were unusual — every BNPL platform needs to verify who it's working with. But because the entire process was built around a single assumption: that a human would handle it. A merchant would fill out one long form on the website, submit it, and then wait. Someone from the Madfu team would contact them, ask for additional information, manually cross-reference their details across external tools — SPARE for IBAN verification, Faceki for identity checks — and eventually move the merchant forward if everything checked out.</p>
+        <p>That manual layer was where merchants dropped off. By the time follow-up happened, the interest was gone. The friction wasn't in what was being asked — it was in how long it took for anything to happen.</p>
+
+        <div class="cs-callout">
+          <p>The brief was to eliminate that gap. Design a merchant onboarding flow that could do in minutes what the old process was doing in days — <strong>without cutting any corners on compliance or verification.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · Before -->
+    <section class="cs-section cs-section--alt">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">02 — Before</div>
+        <h2 class="cs-section__title">What Was There Before</h2>
+        <p>The old "Join as a Partner" page directed merchants to a single form: License Type, Merchant Name, Phone Number, Brand Name, Store Start Date, Sales Channels, Platform List, Platform URL, Annual Revenue, Business Activity — everything stacked on one page, one submit button, and then silence.</p>
+        <p>There was no indication of what happened next. No timeline. No self-service path. No way for a merchant to know whether their application was moving or sitting in a queue. The form collected information that couldn't even be acted on without manual external lookups. And because every verification step required a person, the process scaled with headcount rather than with the product.</p>
+      </div>
+
+      <!-- Old registration pages -->
+      <div class="cs-images cs-images--2up" style="margin-top: 40px;">
+        <figure class="cs-figure cs-figure--page">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/Before/be%20a%20partener.webp" alt="Old Madfu merchant website" />
+          <figcaption>Old merchant website — the form was buried at the bottom of a generic marketing page</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--page">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/Before/defult.webp" alt="Old merchant registration form" />
+          <figcaption>One long form: 10+ fields, one submit, then silence — no timeline, no self-service path</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-section__inner" style="margin-top: 48px;">
+        <div class="cs-compare">
+          <div class="cs-compare__col">
+            <span class="cs-compare__badge cs-compare__badge--before">Before</span>
+            <ul class="cs-list">
+              <li>Single form with 10+ fields, all at once</li>
+              <li>No confirmation of what happens next</li>
+              <li>Manual verification across 3 external tools</li>
+              <li>Days of back-and-forth before any progress</li>
+              <li>No tracking — merchants had no visibility on status</li>
+              <li>Process scaled with headcount, not the product</li>
+            </ul>
+          </div>
+          <div class="cs-compare__col cs-compare__col--after">
+            <span class="cs-compare__badge cs-compare__badge--after">After</span>
+            <ul class="cs-list">
+              <li>4 focused stages — each with a clear purpose</li>
+              <li>Offer shown upfront before any data is collected</li>
+              <li>11 API integrations automating every verification step</li>
+              <li>Complete in under 10 minutes, at any time</li>
+              <li>Progress saves automatically — pause and return</li>
+              <li>Fully self-serve — no Madfu staff needed to proceed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · Stage 1 — Discovery -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">03 — Stage 1</div>
+        <h2 class="cs-section__title">Discovery — The Website Redesign</h2>
+        <p>The redesign started before the flow itself. The merchant-facing landing page was rebuilt to lead with what matters to a business owner: a <strong>30% increase in order value</strong>, a <strong>40% higher conversion rate</strong>, weekly payment transfers, zero financial risk, and an advanced dashboard to manage it all.</p>
+        <p>By the time a merchant clicks "Get Started," they already know exactly why they're there. The website isn't a form page anymore — it's a value proposition. And it does the qualification work before a single field is filled in.</p>
+      </div>
+
+      <!-- Redesigned merchant website -->
+      <div class="cs-images cs-images--scroll" style="margin-top: 40px;">
+        <figure class="cs-figure cs-figure--page" style="max-width:900px; margin:0 auto;">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/be%20a%20Partner.webp" alt="Redesigned Madfu merchant website" />
+          <figcaption>Leads with value — 30% higher order value, 40% higher conversion rate, Advanced Dashboard, weekly transfers — before asking for anything</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 04 · Stage 2 — Lead Generation -->
+    <section class="cs-section cs-section--alt">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">04 — Stage 2</div>
+        <h2 class="cs-section__title">Lead Generation — Qualify First, Ask Less</h2>
+        <p>The Lead Gen form is the first thing a merchant fills out — and it was designed to ask only what's needed to qualify them, nothing more.</p>
+        <p>Business type is selected first: <strong>Freelancer</strong> or <strong>Registered Business</strong>. The form adapts accordingly. Sales channels, annual revenue, a contact name, and a phone number. That's it. An OTP is sent immediately via SMS Gateway to verify the number — the first of 11 integrations, firing in real time.</p>
+      </div>
+
+      <div class="cs-section__inner" style="margin-top: 40px;">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title cs-subsection__title--top">The Revenue Gate</h3>
+          <p>If a merchant reports annual revenue above <strong>20 million SAR</strong>, the flow ends there — but not with a dead end. A dedicated Relationship Manager is automatically assigned, their details are pushed to AlMasmak's high-revenue pipeline, and the merchant sees a confirmation that someone will be in touch to handle the rest personally.</p>
+          <p>Premium merchants get a premium process. Standard merchants continue. And if the offer is rejected at any point, AlMasmak Rejection captures the reason — so the sales team always knows why a merchant walked away.</p>
+        </div>
+      </div>
+
+      <!-- Lead Gen screens: form + OTP + >20M exit -->
+      <div class="cs-images cs-images--3up">
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%201.0.webp" alt="Lead Gen form — business type toggle" />
+          <figcaption>Business type first — Freelancer or Registered Business, form adapts accordingly</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%201.1.webp" alt="OTP verification" />
+          <figcaption>Phone number reflected back immediately — SMS Gateway fires in real time</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%202.1.1.webp" alt=">20M SAR — Relationship Manager assigned" />
+          <figcaption>Premium merchant exit — dedicated RM assigned, pushed to AlMasmak high-revenue pipeline</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 05 · Stage 3 — Offer -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">05 — Stage 3</div>
+        <h2 class="cs-section__title">Offer — Value Before Data</h2>
+        <p>Before a merchant commits to a single piece of personal or business information, they see exactly what they're signing up for.</p>
+        <p>The Offer screen presents the full partnership terms: a <strong>7% special discount on activation</strong>, weekly payment transfers, instant processing, marketing support through Madfu's channels, and 5–6 installment options for their customers. Two actions: "Claim Offer" or "No Thanks." The merchant decides before the process goes further.</p>
+
+        <div class="cs-callout">
+          <p>This was a deliberate design choice. <strong>Showing the offer upfront respects the merchant's time</strong> and filters out anyone who was never going to convert — meaning the merchants who do continue are already bought in.</p>
+        </div>
+
+        <p>After claiming, a "What's Next" screen sets clear expectations: create an account, fill in the form (5–10 minutes), get instant approval, start selling. Crucially, merchants are told their progress saves automatically — they can pause and return without losing anything.</p>
+      </div>
+
+      <!-- Offer + What's Next screens -->
+      <div class="cs-images cs-images--2up">
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%202.1.0%20(Shown).webp" alt="Offer screen" />
+          <figcaption>7% off · weekly transfers · instant processing · marketing support · 5–6 installments — "Claim Offer" or "No Thanks"</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%203.0.0.webp" alt="Offer claimed — What's Next" />
+          <figcaption>4 clear steps, 5–10 min estimate, auto-save note — full transparency before any form is opened</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 06 · Stage 4 — Self-Onboarding -->
+    <section class="cs-section cs-section--alt">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">06 — Stage 4</div>
+        <h2 class="cs-section__title">Self-Onboarding — No Human Required</h2>
+        <p>This is where the old process required a person. The new flow doesn't. Underneath a clean, step-by-step experience, <strong>11 API integrations</strong> run every check that a Madfu team member used to perform manually — in real time, invisibly, while the merchant fills in the next field.</p>
+      </div>
+
+      <!-- Account Creation -->
+      <div class="cs-section__inner" style="margin-top: 56px;">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title cs-subsection__title--top">Account Creation</h3>
+          <p>Email, password, confirm password — with <strong>live validation rules</strong> that check off in real time as the merchant types. Email verification is sent immediately via the Email Server integration, confirming ownership before the merchant moves forward.</p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--2up">
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%203.1.0.webp" alt="Account creation — register your account" />
+          <figcaption>Live validation rules check off as the merchant types — 3-step progress bar visible from the start</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%203.2.0.webp" alt="Email verification" />
+          <figcaption>Email Server fires immediately — "Please check your inbox" with countdown resend</figcaption>
+        </figure>
+      </div>
+
+      <!-- Merchant Information -->
+      <div class="cs-section__inner" style="margin-top: 56px;">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">Merchant Information — Branching Paths</h3>
+          <p>The form branches based on the business type selected during Lead Gen.</p>
+          <p>For <strong>Registered Businesses</strong>, the merchant enters their Unified Number. WATHQ fires immediately — pulling the legal business name, national address (via SPL), and the list of registered business owners directly from government records. The merchant selects themselves from the returned list, or indicates they're acting with delegation rights. ELM then verifies that the phone number entered is registered to the same ID. Documents are uploaded via drag-and-drop.</p>
+          <p>For <strong>Freelancers</strong>, the Freelance Certificate Number drives the same verification logic — pulling available ownership data and adapting the required document set accordingly.</p>
+          <p>What used to require a Madfu team member to manually check across three external systems now completes in seconds — invisibly, while the merchant fills in the next field.</p>
+        </div>
+      </div>
+
+      <!-- Registered Business path -->
+      <div style="padding: 0 5%; margin-bottom: 12px;">
+        <p style="font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:16px;">Registered Business Path</p>
+      </div>
+      <div class="cs-images cs-images--3up">
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%203.3.02.webp" alt="Registered Business — Unified Number form" />
+          <figcaption>Unified Number entered — WATHQ fires, legal name &amp; national address pulled automatically</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%203.3.04.webp" alt="WATHQ — owner selected from list" />
+          <figcaption>Merchant selects themselves from the returned owner list — ELM verifies phone matches ID</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%203.3.03.webp" alt="WATHQ — delegation path" />
+          <figcaption>"No, I am someone else" — delegation certificate upload required, full document set adapts</figcaption>
+        </figure>
+      </div>
+
+      <!-- Freelancer path -->
+      <div style="padding: 0 5%; margin: 32px 0 12px;">
+        <p style="font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:16px;">Freelancer Path</p>
+      </div>
+      <div class="cs-images cs-images--scroll" style="margin-bottom: 0;">
+        <figure class="cs-figure cs-figure--screen" style="max-width:760px; margin:0 auto;">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%203.3.01.webp" alt="Freelancer merchant information" />
+          <figcaption>Freelance Certificate Number drives the same verification logic — document set adapts automatically</figcaption>
+        </figure>
+      </div>
+
+      <!-- Business Information -->
+      <div class="cs-section__inner" style="margin-top: 56px;">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">Business Information</h3>
+          <p>Brand name in both Arabic and English. Business category. Tax returns or proof of sales uploaded. Then bank information: the merchant enters their IBAN, and <strong>SPARE verifies it instantly</strong> — returning the bank name and SWIFT code automatically, displayed with a verified badge. The merchant doesn't need to look anything up. If SPARE fails, the form allows manual input so the process doesn't break.</p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--2up">
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%204.0.0.webp" alt="Business info — SPARE IBAN verified" />
+          <figcaption>IBAN entered → SPARE returns "Al Rajhi Bank" + SWIFT code with green verified badge instantly</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%204.1.0.webp" alt="Business info — manual IBAN fallback" />
+          <figcaption>If SPARE returns no match — manual SWIFT &amp; beneficiary entry. The flow never breaks.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Summary & Submit -->
+      <div class="cs-section__inner" style="margin-top: 56px;">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">Summary &amp; Submit</h3>
+          <p>Before final submission, every piece of information is presented in a collapsible review — Merchant Information, Business Information, and all uploaded attachments — with a final Terms &amp; Conditions and Privacy Policy confirmation.</p>
+          <p>On submit, all data is pushed to AlMasmak as a pre-approved submission. The admin team reviews only for Finance of Terrorism compliance. <strong>Everything else has already been verified.</strong></p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--2up">
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%205.0.webp" alt="Summary review — collapsed" />
+          <figcaption>Collapsible sections — Merchant Info · Business Info · Attachments — everything reviewable before submitting</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--screen">
+          <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%205.1.webp" alt="Summary review — expanded with full details" />
+          <figcaption>Expanded view — all data visible: legal name, address, IBAN, SWIFT, attachments + T&amp;C confirmation</figcaption>
+        </figure>
+      </div>
+
+      <!-- Full self-onboarding flow strip -->
+      <div class="cs-flow-strip cs-flow-strip--after cs-flow-strip--wide" style="margin-top: 48px;">
+        <p class="cs-flow-strip__label">Self-onboarding portal — complete flow in sequence</p>
+        <div class="cs-flow-strip__row">
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%203.1.0.webp" alt="Account creation" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Account creation — live validation rules</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%203.2.0.webp" alt="Email verification" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Email Server fires immediately</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%203.3.02.webp" alt="Unified number — WATHQ" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Unified number → WATHQ pulls all data</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%203.3.04.webp" alt="Owner selection" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Owner selected from returned list</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%204.0.0.webp" alt="Business info — SPARE verified" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">IBAN → SPARE returns bank details instantly</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%205.0.webp" alt="Summary review" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Summary — all sections collapsible</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Merchant/Merchant%20Panel/Merchant%20Onboarding/After/Step%205.1.webp" alt="Final submit" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Submit → pre-approved in AlMasmak</div>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · Integration Architecture -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">07 — Architecture</div>
+        <h2 class="cs-section__title">The Integration Architecture</h2>
+        <p>What made self-onboarding possible wasn't just the UX — it was building <strong>11 API integrations</strong> directly into the flow, replacing every manual verification step with a real-time automated check. The merchant never sees the complexity. They see a form. The 11 integrations run underneath it.</p>
+      </div>
+
+      <div class="cs-images cs-images--scroll" style="margin-top: 40px;">
+        <div style="overflow-x: auto; padding: 0 5%;">
+          <table class="cs-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Integration</th>
+                <th>Purpose</th>
+                <th>Phase</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><strong>SMS Gateway</strong></td>
+                <td>OTP phone verification</td>
+                <td><span class="cs-tag cs-tag--dim">Lead Gen</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><strong>Al-Masmak High Revenue</strong></td>
+                <td>Route &gt;20M SAR leads to dedicated sales pipeline</td>
+                <td><span class="cs-tag cs-tag--dim">Lead Gen</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><strong>Al-Masmak Rejection</strong></td>
+                <td>Track offer rejections with reasons</td>
+                <td><span class="cs-tag cs-tag--dim">Lead Gen</span></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><strong>Email Server</strong></td>
+                <td>Account email verification</td>
+                <td><span class="cs-tag" style="background:var(--purple-dim);color:var(--purple);">Onboarding</span></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><strong>WATHQ</strong></td>
+                <td>Business ownership verification &amp; legal name retrieval</td>
+                <td><span class="cs-tag" style="background:var(--purple-dim);color:var(--purple);">Onboarding</span></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><strong>SPL</strong></td>
+                <td>National address retrieval from government records</td>
+                <td><span class="cs-tag" style="background:var(--purple-dim);color:var(--purple);">Onboarding</span></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><strong>ELM</strong></td>
+                <td>Verify phone number matches registered ID</td>
+                <td><span class="cs-tag" style="background:var(--purple-dim);color:var(--purple);">Onboarding</span></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><strong>SPARE</strong></td>
+                <td>IBAN verification &amp; automatic bank details retrieval</td>
+                <td><span class="cs-tag" style="background:var(--purple-dim);color:var(--purple);">Onboarding</span></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><strong>Al-Masmak Onboarding</strong></td>
+                <td>Complete merchant data submission as pre-approved record</td>
+                <td><span class="cs-tag" style="background:var(--purple-dim);color:var(--purple);">Onboarding</span></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td><strong>Al-Masmak Callback</strong></td>
+                <td>Approval or rejection notification to merchant</td>
+                <td><span class="cs-tag" style="background:#f0fdf4;color:#16a34a;">Post-Submit</span></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td><strong>Al-Masmak Support</strong></td>
+                <td>Issue reporting &amp; support tickets at any phase</td>
+                <td><span class="cs-tag" style="background:#f5f3ff;color:#7c3aed;">Any Phase</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 · Results -->
+    <section class="cs-section cs-section--dark">
+      <div class="cs-section__inner">
+        <div class="cs-section__label cs-section__label--light">08 — Results</div>
+        <h2 class="cs-section__title cs-section__title--light">What This Changed</h2>
+
+        <div class="cs-outcome">
+          <div class="cs-outcome__metric">
+            <span class="cs-outcome__number">Days</span>
+            <span class="cs-outcome__desc">Old process — manual verification</span>
+          </div>
+          <div class="cs-outcome__arrow">→</div>
+          <div class="cs-outcome__metric">
+            <span class="cs-outcome__number cs-outcome__number--green">&lt; 10 min</span>
+            <span class="cs-outcome__desc">New process — fully self-serve</span>
+          </div>
+        </div>
+
+        <p class="cs-outcome__note">The old process required human involvement at every verification step. The new flow handles those checks automatically, in real time, without the merchant knowing they're happening. What required days of back-and-forth now completes in under 10 minutes — at the merchant's own pace, on their own time, without waiting for anyone.</p>
+        <p class="cs-outcome__note">Premium merchants are identified early and routed to a dedicated experience. Merchants who decline the offer are tracked. Merchants who submit arrive in AlMasmak pre-verified and ready for a single compliance check. The complexity is real — branching logic for freelancers vs. registered businesses, fallback paths when APIs return no data, dual verification routes for IBAN. But none of that complexity is visible to the merchant.</p>
+
+        <div class="cs-deliverables">
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>Flow Architecture</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>UX Design</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>UX Copywriting</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>API Integration Design</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>AlMasmak Submission Logic</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>Merchant Website</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 · Reflection -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">09 — Reflection</div>
+        <h2 class="cs-section__title">What This Comes Down To</h2>
+        <p>B2B onboarding fails when it treats businesses like forms to be processed. A merchant deciding whether to partner with a fintech platform is making a trust decision — and every moment of silence, every manual follow-up, every unexplained delay chips away at that trust before the relationship even begins.</p>
+        <p>The redesign reversed that. It leads with value, asks only what's necessary, verifies in the background, and gives merchants control over their own journey.</p>
+
+        <div class="cs-callout">
+          <p>The result is an experience that <strong>respects the merchant's time</strong> — and a backend process that actually scales.</p>
+        </div>
+
+        <p>The flow diagram shows the real complexity — branching paths, fallback states, dual verification routes. But the merchant never sees the diagram. They see a clean, step-by-step process that tells them where they are, what comes next, and what they're getting out of it. That gap between the complexity underneath and the simplicity on screen is the design work.</p>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- ── NEXT PROJECT ── -->
+  <div class="cs-next">
+    <p class="cs-next__label">Next Case Study</p>
+    <h2 class="cs-next__title">Madfu — Redesigning the KYC & Sign-Up Flow</h2>
+    <a href="KYC.html" class="btn btn--primary">View Case Study →</a>
+  </div>
+
+</body>
+</html>

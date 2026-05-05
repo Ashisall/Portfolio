@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madfu Business — Compliant Merchant Financing Sign-Up · Rana Allam</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Password gate: hide body until unlocked -->
+  <script>
+    if (sessionStorage.getItem('business_unlocked') !== '1') {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('pw-gate').style.display = 'flex';
+        document.getElementById('pw-input').focus();
+      });
+    }
+    function checkPassword() {
+      var val = document.getElementById('pw-input').value;
+      if (val === 'dashboard') {
+        sessionStorage.setItem('business_unlocked', '1');
+        document.getElementById('pw-gate').style.display = 'none';
+      } else {
+        document.getElementById('pw-error').style.display = 'block';
+        document.getElementById('pw-input').style.borderColor = '#ff6b6b';
+        document.getElementById('pw-input').value = '';
+        document.getElementById('pw-input').focus();
+      }
+    }
+  </script>
+</head>
+<body class="cs-page">
+
+  <!-- ── PASSWORD GATE ── -->
+  <div id="pw-gate" style="
+    display: none;
+    position: fixed; inset: 0; z-index: 9999;
+    background: #0F0B15;
+    flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 24px; padding: 24px;
+  ">
+    <img src="IMGs/Pasword.webp" alt="Rana Allam" style="height: 48px;" />
+    <div style="text-align: center; max-width: 360px;">
+      <h2 style="color: #fff; font-family: Inter, sans-serif; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px;">Protected Case Study</h2>
+      <p style="color: rgba(255,255,255,.5); font-family: Inter, sans-serif; font-size: .9rem; margin: 0 0 24px;">Enter the password to view this case study.</p>
+      <input
+        id="pw-input"
+        type="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        style="
+          width: 100%; box-sizing: border-box;
+          padding: 12px 16px; border-radius: 10px;
+          border: 1px solid rgba(255,255,255,.15);
+          background: rgba(255,255,255,.06);
+          color: #fff; font-family: Inter, sans-serif; font-size: 1rem;
+          outline: none; margin-bottom: 12px;
+          transition: border-color .2s;
+        "
+        onkeydown="if(event.key==='Enter') checkPassword()"
+        onfocus="this.style.borderColor='#7B2FBE'"
+        onblur="this.style.borderColor='rgba(255,255,255,.15)'"
+      />
+      <p id="pw-error" style="
+        color: #ff6b6b; font-family: Inter, sans-serif;
+        font-size: .85rem; margin: 0 0 12px; display: none;
+      ">Incorrect password. Please try again.</p>
+      <button
+        onclick="checkPassword()"
+        style="
+          width: 100%; padding: 13px; border-radius: 10px;
+          background: #7B2FBE; border: none; color: #fff;
+          font-family: Inter, sans-serif; font-size: 1rem; font-weight: 600;
+          cursor: pointer; transition: background .2s;
+        "
+        onmouseover="this.style.background='#9B4FDE'"
+        onmouseout="this.style.background='#7B2FBE'"
+      >Unlock</button>
+    </div>
+  </div>
+
+  <!-- ── NAV ── -->
+  <header class="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="IMGs/My Logo@4x.webp" alt="Rana Allam" />
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="index.html#work">Portfolio</a>
+      <a href="#contact" class="btn btn--hire">Hire Me</a>
+    </nav>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="cs-hero">
+    <div class="cs-hero__inner">
+      <div class="cs-hero__meta">
+        <span class="cs-tag">Case Study</span>
+        <span class="cs-tag cs-tag--dim">Fintech · B2B · Merchant Financing</span>
+      </div>
+      <h1 class="cs-hero__title">Madfu Business — Designing a Compliant<br/>Merchant Financing Sign-Up</h1>
+      <p class="cs-hero__sub">
+        Compliance sets the rules. It doesn't get to set the experience.
+        Here's how a legally non-negotiable 12-minute flow was designed to feel like 12 minutes — not like a compliance checklist.
+      </p>
+
+      <div class="cs-hero__stats">
+        <div class="cs-stat">
+          <span class="cs-stat__label">Completion Time</span>
+          <span class="cs-stat__value cs-stat__value--green">~12 min</span>
+        </div>
+        <div class="cs-stat cs-stat--divider">
+          <span class="cs-stat__label">Progress Steps</span>
+          <span class="cs-stat__value cs-stat__value--purple">4</span>
+        </div>
+        <div class="cs-stat cs-stat--divider">
+          <span class="cs-stat__label">Required Documents</span>
+          <span class="cs-stat__value cs-stat__value--purple">7</span>
+        </div>
+        <div class="cs-stat cs-stat--divider">
+          <span class="cs-stat__label">Surfaces Designed</span>
+          <span class="cs-stat__value cs-stat__value--purple">2</span>
+        </div>
+      </div>
+
+      <div class="cs-hero__details">
+        <div class="cs-detail">
+          <span class="cs-detail__label">Role</span>
+          <span class="cs-detail__value">Product Designer</span>
+        </div>
+        <div class="cs-detail">
+          <span class="cs-detail__label">Scope</span>
+          <span class="cs-detail__value">UX Design · Flow Architecture · Screen Design</span>
+        </div>
+        <div class="cs-detail">
+          <span class="cs-detail__label">Stakeholders</span>
+          <span class="cs-detail__value">Compliance Team</span>
+        </div>
+        <div class="cs-detail">
+          <span class="cs-detail__label">Team</span>
+          <span class="cs-detail__value">Product Designer · Product Manager</span>
+        </div>
+        <div class="cs-detail">
+          <span class="cs-detail__label">Surfaces</span>
+          <span class="cs-detail__value">Merchant Portal · Business Development Admin Panel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HERO COVER IMAGE ── -->
+  <div class="cs-full-image">
+    <img
+      src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Mockup.webp"
+      alt="Madfu Business — merchant portal mockup"
+      class="cs-full-image__img"
+    />
+  </div>
+
+  <!-- ── BODY ── -->
+  <article class="cs-body">
+
+    <!-- 01 · The Challenge -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">01 — Context</div>
+        <h2 class="cs-section__title">The Challenge</h2>
+        <p>Madfu Business is a financing portal for merchants who want access to working capital through Madfu. The product is essentially BNPL for businesses rather than consumers, and the sign-up requirements that come with it are set by compliance, not by preference. Every document, every verification step, every piece of identity information is there because it legally has to be.</p>
+        <p>The design challenge was not to simplify what compliance required. It was to make something that could not be made shorter feel like it was not as long as it actually is, and to make sure that when merchants did drop off, the business had enough information to bring them back.</p>
+
+        <div class="cs-callout">
+          <p>The result is a flow that takes around <strong>12 minutes to complete</strong> and covers everything compliance needs without losing the merchant along the way.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · Two Surfaces -->
+    <section class="cs-section cs-section--alt">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">02 — Design Approach</div>
+        <h2 class="cs-section__title">Two Surfaces, One Consistent Structure</h2>
+        <p>The flow was designed across two distinct surfaces that needed to speak to each other without sharing a visual identity.</p>
+
+        <div class="cs-compare" style="margin-top: 40px;">
+          <div class="cs-compare__col">
+            <span class="cs-compare__badge cs-compare__badge--before" style="background: #1a1a2e; color: #a78bfa;">Merchant Portal</span>
+            <ul class="cs-list">
+              <li>Dark theme — signals seriousness and trust</li>
+              <li>Clearly separate from the consumer Madfu app</li>
+              <li>Registers as a financial product for business owners</li>
+              <li>Guides merchants through a structured 4-step journey</li>
+            </ul>
+          </div>
+          <div class="cs-compare__col cs-compare__col--after">
+            <span class="cs-compare__badge cs-compare__badge--after">BD Admin Panel</span>
+            <ul class="cs-list">
+              <li>Light theme — internal tool, different audience</li>
+              <li>Neither team ever mistakes which environment they're in</li>
+              <li>Mirrors merchant form structure exactly</li>
+              <li>BD team can step in at any point without disorientation</li>
+            </ul>
+          </div>
+        </div>
+
+        <p style="margin-top: 40px;">Both surfaces share the same three-section structure underneath: <strong>Merchant Information, Representative Information, and Attachments.</strong> This consistency was intentional. When a merchant's application is incomplete, the BD team sees exactly which fields are empty and can call the merchant to fill the gaps without confusion about what belongs where.</p>
+      </div>
+    </section>
+
+    <!-- 03 · The Merchant Journey -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">03 — Merchant Portal</div>
+        <h2 class="cs-section__title">The Merchant Journey</h2>
+        <p>The flow is structured around four clearly named steps — General Information, Representative Information, Attachments, and Nafath — with a persistent progress bar keeping the end always in sight. Each screen is designed to handle exactly one thing.</p>
+      </div>
+
+      <!-- CR + Lead Gen -->
+      <div class="cs-section__inner" style="margin-top: 56px;">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title cs-subsection__title--top">CR Number Check &amp; Lead Generation</h3>
+          <p>The flow opens with a single field: the merchant's Commercial Registration number. It checks whether they already have an account and routes them to sign-in if so — and acts as the first qualification gate before any personal information is asked for.</p>
+          <p>Before the full form begins, the flow captures the minimum viable information: the representative's name, their relationship to the merchant, and a phone number. <strong>This screen exists for one specific reason.</strong> If the merchant abandons at any point after this, the BD team has enough to follow up with a phone call and pick up where the merchant left off. Nothing is wasted.</p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--2up">
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/CR.webp" alt="CR Number entry screen" />
+          <figcaption>CR check — qualifies new applicants and routes returning merchants to sign-in before any personal data is asked for</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Preboarding%20Data.webp" alt="Lead Gen — pre-boarding data capture" />
+          <figcaption>Name · relationship · phone — minimum viable data captured before the full form, so every dropout is recoverable</figcaption>
+        </figure>
+      </div>
+
+      <!-- General Info + OTP -->
+      <div class="cs-section__inner" style="margin-top: 56px;">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">General Information — Step 1 of 4</h3>
+          <p>The first full step covers the business itself: company name, unified number, IBAN, Tax ID, email, and password. The password field uses <strong>live validation with visible requirements</strong> that check off in real time as the merchant types, reducing errors before submission rather than after.</p>
+          <p>A four-step progress bar runs across the top of every screen from this point forward. Merchants always know where they are and how much is left.</p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--2up">
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Step/1.webp" alt="General Information — Step 1" />
+          <figcaption>Step 1 of 4 — business details with live password validation, 4-step progress bar visible throughout</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Step/2.webp" alt="OTP Verification" />
+          <figcaption>OTP mid-flow — identity confirmed before the most sensitive information is collected</figcaption>
+        </figure>
+      </div>
+
+      <!-- Representative Info + transition -->
+      <div class="cs-section__inner" style="margin-top: 56px;">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">Representative Information — Step 2 of 4</h3>
+          <p>This step covers the person completing the application rather than the business itself: their relationship to the merchant, full name, ID number, date of birth, phone number, and business type. The distinction between merchant information and representative information matters legally, and the <strong>two-step structure makes that distinction visible</strong> rather than burying it inside a single long form.</p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--2up">
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Step/2.5.webp" alt="OTP confirmation / transition" />
+          <figcaption>Verification confirmed — natural pause point that feels like progress before moving to representative details</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Step/3.webp" alt="Representative Information — Step 2" />
+          <figcaption>Step 2 of 4 — person distinct from business, making the legal distinction legible to the applicant</figcaption>
+        </figure>
+      </div>
+
+      <!-- Attachments + Review -->
+      <div class="cs-section__inner" style="margin-top: 56px;">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">Attachments &amp; Review — Steps 3 &amp; 4</h3>
+          <p>Seven document types are required by compliance: SPOC Delegation Certificate, SPOC ID or Iqama Copy, Commercial Registration, VAT Certificate, Tax Returns for the last four quarters, E-commerce Authentication Certificate, and Corporate Bank documentation.</p>
+          <p>There was no way to reduce this list. The design work here was in <strong>making each upload feel like a discrete completed task</strong> rather than an intimidating stack of requirements. Each field is clearly labeled, file format and size limits are stated upfront, and the progress bar makes the end of the form visible throughout.</p>
+          <p>Before final submission, the merchant sees a full summary across all three sections — editable before anything is sent. Nafath verification closes the flow using the same three-step instruction format established in the consumer KYC work.</p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--2up">
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Step/4.webp" alt="Attachments — Step 3" />
+          <figcaption>Step 3 of 4 — 7 required documents, each treated as a discrete completed task rather than items in a stack</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Step/5.webp" alt="Review &amp; Nafath — Step 4" />
+          <figcaption>Step 4 of 4 — full review across all sections + Nafath closes the flow</figcaption>
+        </figure>
+      </div>
+
+      <!-- Complete merchant flow strip -->
+      <div class="cs-flow-strip cs-flow-strip--after cs-flow-strip--portal" style="margin-top: 48px;">
+        <p class="cs-flow-strip__label">Merchant Portal — complete flow in sequence</p>
+        <div class="cs-flow-strip__row">
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/CR.webp" alt="CR check" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">CR check — qualify before asking for anything</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Preboarding%20Data.webp" alt="Lead Gen" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Lead captured — every dropout is recoverable</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Step/1.webp" alt="General Info" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Step 1 — business details + live validation</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Step/2.webp" alt="OTP" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">OTP mid-flow — identity confirmed early</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Step/3.webp" alt="Representative Info" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Step 2 — person distinct from business</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Step/4.webp" alt="Attachments" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Step 3 — 7 docs, each a discrete task</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Onboarding/Sign%20Up/Step/5.webp" alt="Review + Nafath" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Step 4 — full review + Nafath closes the flow</div>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · The BD View -->
+    <section class="cs-section cs-section--alt">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">04 — Admin Panel</div>
+        <h2 class="cs-section__title">The Business Development View</h2>
+        <p>When a merchant submits or partially completes their application, it appears in the BD team's admin panel as a new request. The table shows Request ID, date, merchant name, CR number, current status, and SPOC contact information at a glance.</p>
+        <p>Opening any request reveals the <strong>same three-tab structure the merchant saw</strong>: Merchant Information, Representative Information, and Attachments. Fields where the merchant provided data are pre-filled and read-only. Fields where data is missing appear empty and editable, so a BD team member can call the merchant, collect what is needed, and complete the application on their behalf — without rebuilding anything from scratch.</p>
+      </div>
+
+      <!-- BD Table -->
+      <div class="cs-images cs-images--scroll" style="margin-top: 40px;">
+        <figure class="cs-figure cs-figure--portal" style="max-width: 1000px; margin: 0 auto;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Admin/Business%20dev%20-%20Onboarding%20Request%20-%20Table.webp" alt="BD admin panel — requests table" style="aspect-ratio: unset; object-fit: unset;" />
+          <figcaption>Requests table — ID · date · merchant name · CR · status · SPOC contact visible at a glance</figcaption>
+        </figure>
+      </div>
+
+      <!-- BD Data tabs -->
+      <div class="cs-images cs-images--2up" style="margin-top: 16px;">
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Admin/Business%20dev%20-%20Onboarding%20Request%20-%20Merhcnat%20Data01.webp" alt="BD — Merchant Information tab" />
+          <figcaption>Merchant Information tab — pre-filled from submission, missing fields editable so BD can complete on merchant's behalf</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Admin/Business%20dev%20-%20Onboarding%20Request%20-%20Merhcnat%20Data02.webp" alt="BD — Representative Information tab" />
+          <figcaption>Same three-tab structure the merchant saw — no disorientation when stepping in to help</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-images cs-images--2up" style="margin-top: 16px;">
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Admin/Business%20dev%20-%20Onboarding%20Request%20-%20Merhcnat%20Data03.webp" alt="BD — Attachments tab" />
+          <figcaption>Attachments tab — file size · upload date · Download button for review without leaving the panel</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--portal">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Sign%20Up/Admin/Business%20dev%20-%20Onboarding%20Request%20-%20Merhcnat%20Data04.webp" alt="BD — Document replacement modal" />
+          <figcaption>Focused replacement modal — individual documents updated without affecting the rest of the application</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 05 · Results -->
+    <section class="cs-section cs-section--dark">
+      <div class="cs-section__inner">
+        <div class="cs-section__label cs-section__label--light">05 — Results</div>
+        <h2 class="cs-section__title cs-section__title--light">What Made This Different</h2>
+
+        <p class="cs-outcome__note">Most sign-up flows are designed around the question of what can be removed. This one was not. Everything in this flow is there because compliance requires it, and the design had to work within that constraint rather than around it.</p>
+        <p class="cs-outcome__note">The decisions that made the difference were smaller ones. Capturing lead information before the full form so no dropout is truly lost. Separating merchant and representative information so the legal distinction is visible to the person filling it in. Building the admin panel to mirror the merchant form exactly so the BD team can step in at any point without disorientation. Using a dark theme for the merchant portal and a light theme for the internal tool so both audiences always know which environment they are in.</p>
+
+        <div class="cs-outcome" style="margin: 48px 0 32px;">
+          <div class="cs-outcome__metric">
+            <span class="cs-outcome__number">Compliance</span>
+            <span class="cs-outcome__desc">Non-negotiable requirements</span>
+          </div>
+          <div class="cs-outcome__arrow">+</div>
+          <div class="cs-outcome__metric">
+            <span class="cs-outcome__number cs-outcome__number--green">~12 min</span>
+            <span class="cs-outcome__desc">That number is the achievement</span>
+          </div>
+        </div>
+
+        <div class="cs-deliverables">
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>Flow Architecture</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>Screen Design</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>Two-Surface Design System</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>Merchant Portal (Dark)</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>BD Admin Panel (Light)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · Reflection -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">06 — Reflection</div>
+        <h2 class="cs-section__title">Design Within Constraint</h2>
+        <p>Compliance-driven design is different from every other kind of design problem. You cannot advocate for cutting requirements. You cannot push back on the document list. You cannot ask whether all of this is really necessary. It is. That's the premise.</p>
+        <p>What you can control is how it feels to go through it. The progress bar that makes the end visible from the beginning. The OTP mid-flow that creates a sense of forward movement at the right moment. The lead capture that makes the business case for never letting a dropout go cold.</p>
+
+        <div class="cs-callout">
+          <p>The two-surface structure — dark for merchants, light for the BD team — is the most visible decision in the project. It solved a real problem: <strong>both audiences need to work in the same data without ever being confused about which environment they're in.</strong></p>
+        </div>
+
+        <p>The flow diagram shows the real complexity underneath. The merchant doesn't see it. They see a clean, labeled, progress-tracked process that asks for one thing at a time and tells them exactly where they stand. That gap between the complexity underneath and the simplicity on screen is the design work.</p>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- ── NEXT PROJECT ── -->
+  <div class="cs-next" id="contact">
+    <p class="cs-next__label">Next Case Study</p>
+    <h2 class="cs-next__title">Madfu — Redesigning the Merchant Onboarding Flow</h2>
+    <a href="Merchant.html" class="btn btn--primary">View Case Study →</a>
+  </div>
+
+</body>
+</html>

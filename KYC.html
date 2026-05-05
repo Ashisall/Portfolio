@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madfu — KYC & Sign-Up Redesign · Rana Allam</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
+</head>
+<body class="cs-page">
+
+  <!-- ── NAV ── -->
+  <header class="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="IMGs/My Logo@4x.webp" alt="Rana Allam" />
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="index.html#work">Portfolio</a>
+      <a href="#contact" class="btn btn--hire">Hire Me</a>
+    </nav>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="cs-hero">
+    <div class="cs-hero__inner">
+      <div class="cs-hero__meta">
+        <span class="cs-tag">Case Study</span>
+        <span class="cs-tag cs-tag--dim">Fintech · KYC · B2C</span>
+      </div>
+      <h1 class="cs-hero__title">Madfu — Redesigning the<br/>KYC & Sign-Up Flow</h1>
+      <p class="cs-hero__sub">
+        A BNPL platform losing 85% of new users before they ever reached the product.
+        Here's how a systematic redesign of onboarding turned that around.
+      </p>
+
+      <div class="cs-hero__stats">
+        <div class="cs-stat">
+          <span class="cs-stat__label">Conversion before</span>
+          <span class="cs-stat__value cs-stat__value--muted">14.65%</span>
+        </div>
+        <div class="cs-stat__arrow">→</div>
+        <div class="cs-stat">
+          <span class="cs-stat__label">Conversion after</span>
+          <span class="cs-stat__value cs-stat__value--green">31.67%</span>
+        </div>
+        <div class="cs-stat cs-stat--divider">
+          <span class="cs-stat__label">Improvement</span>
+          <span class="cs-stat__value cs-stat__value--purple">+116%</span>
+        </div>
+      </div>
+
+      <div class="cs-hero__details">
+        <div class="cs-detail">
+          <span class="cs-detail__label">Role</span>
+          <span class="cs-detail__value">Product Design Lead</span>
+        </div>
+        <div class="cs-detail">
+          <span class="cs-detail__label">Scope</span>
+          <span class="cs-detail__value">UX Design · UX Copywriting · Motion Design</span>
+        </div>
+        <div class="cs-detail">
+          <span class="cs-detail__label">Team</span>
+          <span class="cs-detail__value">Product Design Lead · Senior Designer · Strategy Consultant</span>
+        </div>
+        <div class="cs-detail">
+          <span class="cs-detail__label">Surfaces</span>
+          <span class="cs-detail__value">Consumer App · Payment Gateway iFrame</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HERO COVER IMAGE ── -->
+  <div class="cs-full-image">
+    <img
+      src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Hero.webp"
+      alt="Seamless Onboarding, Stronger Trust — Madfu KYC case study hero"
+      class="cs-full-image__img"
+    />
+  </div>
+
+  <!-- ── BODY ── -->
+  <article class="cs-body">
+
+    <!-- 1 · The number -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">01 — Context</div>
+        <h2 class="cs-section__title">The Number That Started Everything</h2>
+        <p>When I joined this project, Madfu's onboarding conversion rate was <strong>14.65%.</strong></p>
+        <p>That means more than 85 out of every 100 people who tried to sign up never made it through. They started the process, hit something along the way, and left. A wall, a confusing screen, a form that asked for too much at once.</p>
+
+        <figure class="cs-gif">
+          <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExajRlaTQ5MmljcDJweTVhcjNsankwdnpyZjFta2Zqa3JxNnJ5YmJ3OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FcuiZUneg1YRAu1lH2/giphy.gif" alt="User reaction to confusing onboarding" />
+          <figcaption>This is what I imagine the user must have looked like</figcaption>
+        </figure>
+
+        <p>Madfu is a Buy Now, Pay Later platform operating in Saudi Arabia. In a market where trust is everything and competition for attention is relentless, losing that many users before they ever reach the product is not a UX problem. It is a business problem.</p>
+        <p>The brief was to fix the KYC and onboarding flow across two surfaces: the <strong>Consumer App</strong> and the <strong>iFrame</strong>, which is Madfu's embedded payment gateway used at merchant checkout. That meant starting at the very beginning, before the first input field, before the first screen of the flow itself.</p>
+      </div>
+    </section>
+
+    <!-- 2 · What was broken -->
+    <section class="cs-section cs-section--alt">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">02 — Problem</div>
+        <h2 class="cs-section__title">What Was Broken</h2>
+        <p>The original experience had problems at every layer — from the first second a user opened the app to the final step of identity verification.</p>
+      </div>
+
+      <!-- Before screens — splash + welcome + overloaded form -->
+      <div class="cs-images cs-images--3up">
+        <figure class="cs-figure">
+          <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/splash.webp" alt="Old Madfu splash screen" />
+          <figcaption>Static splash — logo on a flat blue background, nothing moves</figcaption>
+        </figure>
+        <figure class="cs-figure">
+          <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/Welcome01.webp" alt="Old welcome carousel slide 1" />
+          <figcaption>Same two-tone template across all 4 slides, translated copy</figcaption>
+        </figure>
+        <figure class="cs-figure">
+          <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/2.webp" alt="Old overloaded sign-up form" />
+          <figcaption>7 fields on one screen — greyed-out Register button at the bottom</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-section__inner">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">Splash Screen &amp; Welcome Carousel</h3>
+          <p>The old splash screen was a single static frame: the Madfu logo centred on a light blue background. Nothing moved. There was no transition into the experience.</p>
+          <p>What followed was a four-slide welcome carousel, each slide built on the same two-tone template. A 3D illustration on top, a dark navy panel with text below. The illustrations felt generic and the copy read like it had been translated rather than written. <em>"Do not let special moments pass without enjoying them"</em> was one of the lines. <em>"Lenient Sharia"</em> was used as a headline, a phrase that carries real weight in the Saudi market but needed far more care in how it was framed.</p>
+          <p>Four slides, the same layout, the same structure, and no real reason to read any of them. Users either skipped immediately or arrived at sign-up having absorbed nothing about why Madfu was worth their time.</p>
+        </div>
+
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">The Consumer App Flow</h3>
+          <p>The sign-up screen greeted new users with <strong>"Welcome Back!"</strong> which is immediately the wrong message for someone who had never opened the app before. The screen that followed was a full overview of the steps ahead, a list of what was about to happen before anything actually happened.</p>
+          <p>Then came the form. One screen. Everything stacked on it: first name, last name, email, gender, password, confirm password, referral code, and a privacy policy checkbox, with a greyed-out Register button waiting at the bottom.</p>
+          <p>Large decorative 3D illustrations consumed the top third of every screen. The Nafath verification screen, which is the most unfamiliar step in the entire flow for most users, carried the headline <em>"From Nafath app select"</em> and offered two buttons with no clear instruction on which to tap or when. A confirmation modal then interrupted mid-process to re-confirm an ID the user had just entered two screens earlier.</p>
+          <p>Financial information was mandatory, with no explanation of why it was needed and no option to skip. No progress bar appeared anywhere. Users had no idea how far along they were or how much was left.</p>
+        </div>
+
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">The iFrame</h3>
+          <p>The iFrame sits inside a merchant's checkout environment. The user is already committed to a purchase and KYC is the only thing standing between them and completing their order.</p>
+          <p>The old iFrame asked users to manually type in their phone number, even though the merchant already had it. It then walked them through four steps including the same overloaded personal information form from the app: name, gender, password, confirm password, referral code. None of that belonged at the point of checkout.</p>
+        </div>
+      </div>
+
+      <!-- Welcome carousel — all 4 slides -->
+      <div class="cs-images cs-images--4up">
+        <figure class="cs-figure">
+          <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/Welcome01.webp" alt="Welcome slide 1" />
+          <figcaption>Slide 1 — Entertainment &amp; enjoyment</figcaption>
+        </figure>
+        <figure class="cs-figure">
+          <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/Welcome02.webp" alt="Welcome slide 2" />
+          <figcaption>Slide 2 — Same template, different copy</figcaption>
+        </figure>
+        <figure class="cs-figure">
+          <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/Welcome03.webp" alt="Welcome slide 3" />
+          <figcaption>Slide 3 — Identical layout</figcaption>
+        </figure>
+        <figure class="cs-figure">
+          <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/Welcome04.webp" alt="Welcome slide 4" />
+          <figcaption>Slide 4 — No reason to read any of them</figcaption>
+        </figure>
+      </div>
+
+      <!-- Full old flow — annotated horizontal strip -->
+      <div class="cs-flow-strip">
+        <p class="cs-flow-strip__label">Original consumer app flow — all screens in sequence</p>
+        <div class="cs-flow-strip__row">
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/0.webp" alt="Welcome Back screen" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--bad">
+              "Welcome Back!" — wrong greeting for a new user
+            </div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/1.webp" alt="Steps overview screen" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--bad">
+              Full steps overview before anything starts
+            </div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/2.webp" alt="Overloaded form" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--bad">
+              7 fields on one screen, greyed-out CTA
+            </div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/3.webp" alt="OTP screen" />
+            <div class="cs-flow-strip__annotation">
+              OTP — large decorative illustration dominates
+            </div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/4.webp" alt="National ID screen" />
+            <div class="cs-flow-strip__annotation">
+              National ID entry
+            </div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/5.webp" alt="Nafath screen" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--bad">
+              "From Nafath app select" — unclear headline, two ambiguous buttons
+            </div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/sign%20up%20flow07-1.webp" alt="Identity confirmation modal" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--bad">
+              Modal re-confirms ID the user entered 2 screens ago
+            </div>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · The redesign -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">03 — Solution</div>
+        <h2 class="cs-section__title">The Redesign</h2>
+        <div class="cs-callout">
+          <p>The principle behind every decision was the same: <strong>one clear job per screen, and nothing else.</strong></p>
+        </div>
+      </div>
+
+      <!-- Splash & Carousel -->
+      <div class="cs-section__inner">
+        <h3 class="cs-subsection__title cs-subsection__title--top">Splash Screen &amp; Welcome Animation</h3>
+        <p>The new splash screen is animated. The Madfu wordmark in both English and Arabic builds into frame, giving the product a moment of presence before anything is asked of the user. It is not decorative. It sets a register: this is a considered product, and what follows will feel the same way.</p>
+        <p>The welcome carousel was rebuilt from scratch with new copy, new visual logic, and new animation. Each slide now has a distinct identity and a reason to exist. The illustrations are purposeful rather than decorative. The copy is written in the brand's actual voice rather than translated from a brief. Together, the four slides do what a welcome experience is supposed to do: tell the user what Madfu is, why it is worth their time, and make the first impression feel earned.</p>
+      </div>
+
+      <!-- Splash Before / After -->
+      <div class="cs-motion-compare">
+        <div class="cs-motion__col">
+          <div class="cs-motion__badge cs-motion__badge--before">Before — Static</div>
+          <div class="cs-phone-frame">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/Old%20Flow/Old%20Flow/splash.webp" alt="Old static splash" />
+          </div>
+          <p class="cs-motion__caption">A flat blue frame. Nothing moves. No transition into the product.</p>
+        </div>
+        <div class="cs-motion__arrow">→</div>
+        <div class="cs-motion__col">
+          <div class="cs-motion__badge cs-motion__badge--after">After — Animated</div>
+          <div class="cs-phone-frame cs-phone-frame--dark">
+            <lottie-player
+              src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/Splash%20Screen.json"
+              background="transparent"
+              speed="1"
+              loop
+              autoplay
+              style="width:100%;height:100%;"
+            ></lottie-player>
+          </div>
+          <p class="cs-motion__caption">The Madfu wordmark builds into frame — both English and Arabic.</p>
+        </div>
+      </div>
+
+      <!-- Full motion video -->
+      <div class="cs-video-showcase">
+        <div class="cs-video-showcase__label">
+          <span class="cs-motion__badge cs-motion__badge--after">Full Sequence</span>
+          <p>Splash screen → Welcome carousel — the complete animated entry experience</p>
+        </div>
+        <div class="cs-phone-frame cs-phone-frame--dark cs-phone-frame--video">
+          <video
+            autoplay muted loop playsinline
+            poster="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/SPLASH.webp"
+          >
+            <source src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/SplashandWelcome.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <!-- New welcome carousel — 4 slides with live Lottie illustrations -->
+      <div class="cs-welcome-grid">
+        <div class="cs-welcome-card">
+          <div class="cs-welcome-card__anim">
+            <lottie-player src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/Animation%20Welcome%20Screen/Screen1.json" background="transparent" speed="1" loop autoplay style="width:100%;height:100%;"></lottie-player>
+          </div>
+          <div class="cs-welcome-card__screen">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/Welcome01.webp" alt="New welcome slide 1" />
+          </div>
+        </div>
+        <div class="cs-welcome-card">
+          <div class="cs-welcome-card__anim">
+            <lottie-player src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/Animation%20Welcome%20Screen/Screen2.json" background="transparent" speed="1" loop autoplay style="width:100%;height:100%;"></lottie-player>
+          </div>
+          <div class="cs-welcome-card__screen">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/Welcome02.webp" alt="New welcome slide 2" />
+          </div>
+        </div>
+        <div class="cs-welcome-card">
+          <div class="cs-welcome-card__anim">
+            <lottie-player src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/Animation%20Welcome%20Screen/Screen3.json" background="transparent" speed="1" loop autoplay style="width:100%;height:100%;"></lottie-player>
+          </div>
+          <div class="cs-welcome-card__screen">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/Welcome03.webp" alt="New welcome slide 3" />
+          </div>
+        </div>
+        <div class="cs-welcome-card">
+          <div class="cs-welcome-card__anim">
+            <lottie-player src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/Animation%20Welcome%20Screen/Screen4.json" background="transparent" speed="1" loop autoplay style="width:100%;height:100%;"></lottie-player>
+          </div>
+          <div class="cs-welcome-card__screen">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/Welcome04.webp" alt="New welcome slide 4" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Consumer app -->
+      <div class="cs-section__inner">
+        <h3 class="cs-subsection__title cs-subsection__title--top">Consumer App — Redesigned KYC Flow</h3>
+      </div>
+
+      <div class="cs-flow-steps">
+
+        <div class="cs-step">
+          <div class="cs-step__number">1</div>
+          <div class="cs-step__content">
+            <h4 class="cs-step__title">Mobile Number</h4>
+            <p class="cs-step__desc">Entry point. One field, one action. The screen gets out of the way.</p>
+          </div>
+          <figure class="cs-step__screen">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/0.webp" alt="Mobile number screen" class="cs-step__img" />
+          </figure>
+        </div>
+
+        <div class="cs-step">
+          <div class="cs-step__number">2</div>
+          <div class="cs-step__content">
+            <h4 class="cs-step__title">Verification Code</h4>
+            <p class="cs-step__desc">Confirms the exact number the user just entered. The copy reflects it back precisely, closing the loop immediately and removing any reason to second-guess.</p>
+          </div>
+          <figure class="cs-step__screen">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/1.webp" alt="OTP screen" class="cs-step__img" />
+          </figure>
+        </div>
+
+        <div class="cs-step">
+          <div class="cs-step__number">3</div>
+          <div class="cs-step__content">
+            <h4 class="cs-step__title">Personal Information</h4>
+            <p class="cs-step__desc">The progress bar appears here for the first time, giving users a visible sense of movement and distance remaining. The date of birth field accepts both Gregorian and Hijri calendars, a localization detail that matters in the Saudi market and signals that this product was built for its actual users.</p>
+          </div>
+          <figure class="cs-step__screen">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/2.webp" alt="Personal information screen" class="cs-step__img" />
+          </figure>
+        </div>
+
+        <div class="cs-step">
+          <div class="cs-step__number">4</div>
+          <div class="cs-step__content">
+            <h4 class="cs-step__title">Create Password</h4>
+            <p class="cs-step__desc">Isolated on its own screen so it doesn't compete with anything else.</p>
+          </div>
+          <figure class="cs-step__screen">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/3.webp" alt="Create password screen" class="cs-step__img" />
+          </figure>
+        </div>
+
+        <div class="cs-step">
+          <div class="cs-step__number">5</div>
+          <div class="cs-step__content">
+            <h4 class="cs-step__title">Financial Information</h4>
+            <p class="cs-step__desc">Made optional, with a clear reason to fill it in: <em>"By providing your financial information, you may be eligible to a higher limit."</em> The incentive stays visible. The choice stays with the user.</p>
+          </div>
+          <figure class="cs-step__screen">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/4.webp" alt="Financial information screen" class="cs-step__img" />
+          </figure>
+        </div>
+
+        <div class="cs-step">
+          <div class="cs-step__number">6</div>
+          <div class="cs-step__content">
+            <h4 class="cs-step__title">Nafath Verification</h4>
+            <p class="cs-step__desc">Nafath is Saudi Arabia's national digital identity verification system, essential for KYC compliance but unfamiliar to many users. The screen was rebuilt with three clear steps, a prominently displayed verification number, a single unambiguous CTA, and the progress bar sitting at near-complete so users can see they are almost done.</p>
+          </div>
+          <figure class="cs-step__screen">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/5.webp" alt="Nafath verification screen" class="cs-step__img" />
+          </figure>
+        </div>
+
+        <div class="cs-step">
+          <div class="cs-step__number">7</div>
+          <div class="cs-step__content">
+            <h4 class="cs-step__title">You're ready to shop</h4>
+            <p class="cs-step__desc">The finish line. A green checkmark, a human headline, and a reminder of what they just signed up for. Not "Account created successfully." A moment that actually feels like an arrival.</p>
+          </div>
+          <figure class="cs-step__screen">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/6.webp" alt="You're ready to shop success screen" class="cs-step__img" />
+          </figure>
+        </div>
+
+      </div>
+
+      <!-- After screens — annotated green strip -->
+      <div class="cs-flow-strip cs-flow-strip--after">
+        <p class="cs-flow-strip__label">Redesigned consumer app — all screens in sequence</p>
+        <div class="cs-flow-strip__row">
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/0.webp" alt="Mobile number" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">One field, one action. No decoration.</div>
+          </figure>
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/1.webp" alt="OTP" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Exact number reflected back. No illustration.</div>
+          </figure>
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/2.webp" alt="Personal info" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Progress bar + Hijri calendar support.</div>
+          </figure>
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/3.webp" alt="Create password" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Password isolated — no competing fields.</div>
+          </figure>
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/4.webp" alt="Financial info" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Optional with clear incentive + Skip for now.</div>
+          </figure>
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/5.webp" alt="Nafath" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">3 clear steps, number prominent, one CTA.</div>
+          </figure>
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/6.webp" alt="Success" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">"You're ready to shop!" — a real arrival moment.</div>
+          </figure>
+        </div>
+      </div>
+
+      <!-- iFrame -->
+      <div class="cs-section__inner cs-section__inner--mt">
+        <h3 class="cs-subsection__title cs-subsection__title--top">The iFrame — Same Standard, Different Stakes</h3>
+        <p>The iFrame is not onboarding. It is clearance. The user is mid-purchase and every extra second of friction risks a lost transaction.</p>
+        <p>The redesigned iFrame flow has three steps. The phone number is now extracted directly from the merchant, so the user never has to type it. OTP confirms the number and moves forward. The information screen was stripped back to only what KYC requires at this stage: National ID or Iqama ID, date of birth, and email, with Hijri calendar support. Password setup is removed entirely and happens later inside the app. Financial information is not asked at checkout at all.</p>
+        <p>The Nafath screen was rebuilt with two clearly numbered steps, a prominent verification number, one primary CTA, and a secondary support option for users who get stuck at the most unfamiliar part of the process. Every field that was not strictly necessary for compliance at the point of purchase was cut.</p>
+      </div>
+
+      <!-- Old iFrame strip -->
+      <div class="cs-flow-strip">
+        <p class="cs-flow-strip__label">Old iFrame — 5 steps, manual entry, overloaded form</p>
+        <div class="cs-flow-strip__row">
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/iFrame/1.webp" alt="Old iFrame entry" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--bad">User manually types their own phone number</div>
+          </figure>
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/iFrame/2.webp" alt="Old iFrame OTP" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--bad">4-step progress indicator shown at checkout</div>
+          </figure>
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/iFrame/3.webp" alt="Old iFrame form" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--bad">First name, last name, gender, password, referral code — at checkout</div>
+          </figure>
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/iFrame/4.webp" alt="Old National ID" />
+            <div class="cs-flow-strip__annotation">National ID entry</div>
+          </figure>
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/iFrame/5.webp" alt="Old Nafath" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--bad">Confusing Nafath screen — no clear steps</div>
+          </figure>
+        </div>
+      </div>
+
+      <!-- New iFrame strip + app handoff -->
+      <div class="cs-flow-strip cs-flow-strip--after">
+        <p class="cs-flow-strip__label">New iFrame — 3 steps at checkout, then password in-app</p>
+        <div class="cs-flow-strip__row">
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/iFrame/New1.webp" alt="New iFrame OTP" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Phone pre-filled from merchant — user never types it</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/iFrame/New2.webp" alt="New iFrame info" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Only 3 compliance-critical fields — ID, DOB, Email</div>
+          </figure>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/iFrame/New3.webp" alt="New Nafath" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">2 numbered steps, prominent code, one CTA + support option</div>
+          </figure>
+
+          <div class="cs-flow-strip__divider">
+            <div class="cs-flow-strip__divider-line"></div>
+            <span>Purchase complete.<br/>Continues in app →</span>
+            <div class="cs-flow-strip__divider-line"></div>
+          </div>
+
+          <figure class="cs-flow-strip__item">
+            <img src="Case%20Studies/Madfu/Consumer/Consumer%20App/KYC%20/New%20Flow/3.webp" alt="Create password in app" />
+            <div class="cs-flow-strip__annotation cs-flow-strip__annotation--good">Password set up in-app only — removed from checkout entirely</div>
+          </figure>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 4 · Outcome -->
+    <section class="cs-section cs-section--dark">
+      <div class="cs-section__inner">
+        <div class="cs-section__label cs-section__label--light">04 — Results</div>
+        <h2 class="cs-section__title cs-section__title--light">The Outcome</h2>
+
+        <div class="cs-outcome">
+          <div class="cs-outcome__metric">
+            <span class="cs-outcome__number">14.65%</span>
+            <span class="cs-outcome__desc">Conversion rate before launch</span>
+          </div>
+          <div class="cs-outcome__arrow">→</div>
+          <div class="cs-outcome__metric">
+            <span class="cs-outcome__number cs-outcome__number--green">31.67%</span>
+            <span class="cs-outcome__desc">Conversion rate after launch</span>
+          </div>
+        </div>
+
+        <p class="cs-outcome__note">After launch, conversion through the KYC flow rose from <strong>14.65% to 31.67%</strong>, more than doubling the completion rate with no change to acquisition spend or marketing activity. For a BNPL platform, every completed sign-up is a customer. Getting twice as many people through the door from the same number of starts is a direct business result.</p>
+
+        <div class="cs-deliverables">
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>Flow Architecture</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>Screen Design</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>UX Copywriting</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>Splash Animation</span>
+          </div>
+          <div class="cs-deliverable">
+            <div class="cs-deliverable__icon">⟶</div>
+            <span>Welcome Carousel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · Reflection -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <div class="cs-section__label">05 — Reflection</div>
+        <h2 class="cs-section__title">What This Comes Down To</h2>
+        <div class="cs-callout">
+          <p>Fintech onboarding is a trust exercise disguised as a form.</p>
+        </div>
+        <p>Every screen asks the user to hand something over: their number, their ID, their income. If the product does not feel confident and clear at each step, people sense it and leave.</p>
+        <p>The work here was not about aesthetics. It was about removing every reason to stop, and making a complicated, regulated process feel like the easiest part of someone's day.</p>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- ── NEXT PROJECT ── -->
+  <section class="cs-next">
+    <p class="cs-next__label">Next Case Study</p>
+    <h2 class="cs-next__title">View More Work →</h2>
+    <a href="index.html#work" class="btn btn--hire">Back to Portfolio</a>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="contact">
+    <div class="footer__inner">
+      <div class="footer__left">
+        <img src="IMGs/My Logo@4x.webp" alt="Rana Allam" class="footer__logo" />
+        <p class="footer__tagline">Designing experiences that convert.</p>
+        <div class="footer__socials">
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Behance">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Dribbble">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308a10.19 10.19 0 004.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.017-8.04 6.4a10.161 10.161 0 006.29 2.166c1.42 0 2.77-.29 4.006-.816zm-11.62-2.073c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12a28.5 28.5 0 00-.944-2.066c-5.129 1.538-10.116 1.478-10.573 1.47a10.146 10.146 0 002.78 7.48zm-2.96-8.92c.466.008 4.813.005 9.636-1.29a41.247 41.247 0 00-4.928-7.071 10.163 10.163 0 00-4.708 8.36zm6.964-9.458c.16.215 3.097 4.12 4.994 7.2 3.142-1.18 4.476-2.98 4.64-3.205a10.16 10.16 0 00-9.634-3.995zm9.234 5.386c-.202.267-1.682 2.19-4.933 3.542.205.42.4.845.578 1.273.063.143.124.287.183.432 3.388-.426 6.76.258 7.1.323a10.174 10.174 0 00-2.928-5.57z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__right">
+        <h3 class="footer__cta-title">Let's work together</h3>
+        <p class="footer__cta-sub">Open to full-time roles and freelance projects.</p>
+        <a href="mailto:hello@ranaallam.com" class="btn btn--hire footer__cta-btn">Get in Touch</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 Rana Allam. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
