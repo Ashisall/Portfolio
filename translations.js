@@ -44,7 +44,7 @@ const translations = {
     'test-title':   'What people say',
     'test1-quote':  '"I didn\'t ask for animations. I just asked for screens. She came back with motion that made the whole product feel like a different tier. She clearly thinks in experience, not just interface."',
     'test1-role':   'Product Manager, MADFU',
-    'test2-quote':  '"She went from feature brief to user stories to handoff-ready screens faster than most designers finish their first round of questions. Rana thinks like a PM and delivers like a designer. That combo is genuinely hard to find."',
+    'test2-quote':  '"Working with Rana on MADFU B2B has been an exceptional experience. She didn\'t just design screens; she shaped the entire B2B experience from the ground up, translating complex business requirements into intuitive, polished flows that our users genuinely love. Her ability to bridge the gap between product thinking and design execution made collaboration seamless and productive."',
     'test2-role':   'Product Manager, MADFU Business',
     'test3-quote':  '"She asked maybe three questions and came back with something that already made sense structurally. No back and forth, no missing states. Just clean work, fast."',
     'test3-role':   'Partner, Tuwaiq',
@@ -52,7 +52,7 @@ const translations = {
     'test4-role':   'Head of Product, Orascom',
     'test5-quote':  '"Collaborating with Rana is seamless because her process is clear. She brings structure to ambiguous briefs, articulates her decisions well, and the output is always something the team can build on."',
     'test5-role':   'Senior Product Designer, Orascom',
-    'test6-quote':  '"Rana approaches design with the mindset of someone who genuinely understands the product. Working alongside her, I saw firsthand how she balances UX rigour with business context — a combination that\'s rarer than it should be."',
+    'test6-quote':  '"Rana is the most proactive person I\'ve really enjoyed working with. Her positive attitude towards work and the initiatives she takes let the process go smoothly and more efficiently than expected. Her product sense and ability to consistently make correct decisions about a product drive the product to the growth stage."',
     'test6-role':   'Senior Product Designer, Madfu',
 
     // Tools
@@ -111,7 +111,7 @@ const translations = {
     'test-title':   'ماذا يقول الناس',
     'test1-quote':  '"ما طلبت منها حركات. طلبت شاشات فقط. رجعت بحركة خلّت المنتج كله يحس إنه من فئة ثانية. واضح إنها تفكر بالتجربة، مش بس الواجهة."',
     'test1-role':   'مدير منتج، مدفوع',
-    'test2-quote':  '"انتقلت من ملخص الميزة إلى قصص المستخدم إلى شاشات جاهزة للتسليم أسرع من معظم المصممين اللي ما زالوا في جولة الأسئلة الأولى. رنا تفكر كمدير منتج وتسلّم كمصممة. هذا التوليف نادر فعلاً."',
+    'test2-quote':  '"العمل مع رنا على مدفوع بيزنس كان تجربة استثنائية. ما اكتفت بتصميم الشاشات، بل شكّلت تجربة B2B بالكامل من الصفر، وترجمت متطلبات الأعمال المعقدة إلى تدفقات بديهية ومصقولة يحبها مستخدمونا فعلاً. قدرتها على ربط التفكير المنتجي بالتنفيذ التصميمي جعلت التعاون سلساً ومثمراً."',
     'test2-role':   'مدير منتج، مدفوع بيزنس',
     'test3-quote':  '"سألت ثلاثة أسئلة تقريباً ورجعت بشيء منطقي هيكلياً من البداية. ما في ذهاب وإياب، ما في حالات ناقصة. شغل نظيف وسريع."',
     'test3-role':   'شريك، طويق',
@@ -119,7 +119,7 @@ const translations = {
     'test4-role':   'رئيس المنتج، أوراسكوم',
     'test5-quote':  '"التعاون مع رنا سلس لأن أسلوبها واضح. تُدخل منهجية على المهام الغامضة، وتوضح قراراتها بشكل جيد، والناتج دائماً شيء يستطيع الفريق البناء عليه."',
     'test5-role':   'مصممة منتج أولى، أوراسكوم',
-    'test6-quote':  '"رنا تتعامل مع التصميم بعقلية من يفهم المنتج حقاً. في عملنا المشترك على مدفوع، رأيت بنفسي كيف توازن بين صرامة تجربة المستخدم والسياق التجاري — وهو مزيج أندر مما ينبغي."',
+    'test6-quote':  '"رنا من أكثر الأشخاص الذين استمتعت بالعمل معهم. موقفها الإيجابي تجاه العمل والمبادرات التي تأخذها تجعل العملية تسير بسلاسة وكفاءة أكثر مما هو متوقع. حسها المنتجي وقدرتها على اتخاذ قرارات صحيحة باستمرار يدفعان المنتج نحو مرحلة النمو."',
     'test6-role':   'مصممة منتج أولى، مدفوع',
 
     // Tools

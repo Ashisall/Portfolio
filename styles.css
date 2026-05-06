@@ -477,11 +477,24 @@ a  { text-decoration: none; color: inherit; }
 .tcard__name-link {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color .2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color .2s;
 }
 .tcard__name-link:hover {
-  border-bottom-color: var(--purple);
+  color: #0a66c2;
+}
+.tcard__li-icon {
+  width: 14px;
+  height: 14px;
+  color: #0a66c2;
+  flex-shrink: 0;
+  opacity: .7;
+  transition: opacity .2s;
+}
+.tcard__name-link:hover .tcard__li-icon {
+  opacity: 1;
 }
 .tcard__footer span {
   font-size: .8rem;
