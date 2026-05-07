@@ -873,6 +873,90 @@
   margin-bottom: 28px;
 }
 
+/* ── Merchant portal screenshot figures (7:5 ratio) ── */
+.cs-figure--merchant img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  display: block;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(0,0,0,.1);
+  aspect-ratio: 7 / 5;
+  object-fit: cover;
+  object-position: left top;
+}
+
+/* ── Admin/light-theme desktop screenshot figures ── */
+.cs-figure--admin img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  display: block;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(0,0,0,.1);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: left top;
+}
+/* Wide admin strip items */
+.cs-flow-strip--admin .cs-flow-strip__item { flex: 0 0 480px; }
+.cs-flow-strip--admin .cs-flow-strip__item img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: left top;
+  border-radius: var(--radius-md);
+}
+
+/* ── See-also cross-link pill ── */
+.cs-see-also {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0 0;
+  padding: 10px 18px;
+  background: var(--purple-dim);
+  border: 1px solid rgba(123,47,190,.25);
+  border-radius: var(--radius-full);
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--purple);
+  text-decoration: none;
+  transition: background .2s, color .2s;
+}
+.cs-see-also:hover {
+  background: rgba(123,47,190,.15);
+  color: var(--purple);
+}
+.cs-see-also__icon {
+  font-size: .9rem;
+  opacity: .7;
+}
+
+/* ── Resilience / error-handling section ── */
+.cs-section--resilience {
+  background: #0f172a;
+  border-bottom: none;
+}
+.cs-section--resilience .cs-section__label--light { color: #93c5fd; }
+.cs-section--resilience .cs-section__title--light { color: #fff; }
+.cs-section--resilience p,
+.cs-section--resilience .cs-section__inner p {
+  color: rgba(255,255,255,.75);
+}
+.cs-section--resilience p strong,
+.cs-section--resilience .cs-section__inner p strong {
+  color: #fff;
+}
+.cs-section--resilience .cs-subsection__title {
+  color: #e2e8f0;
+  border-bottom-color: rgba(147,197,253,.2);
+}
+.cs-section--resilience .cs-callout {
+  background: rgba(147,197,253,.08);
+  border-left-color: #60a5fa;
+}
+.cs-section--resilience .cs-callout p {
+  color: #e2e8f0 !important;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .cs-hero__stats { flex-direction: column; align-items: flex-start; gap: 16px; }

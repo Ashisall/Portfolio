@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="IMGs/Favicon.png?v=2" />
+  <link rel="shortcut icon" href="IMGs/Favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="IMGs/Favicon.png?v=2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madfu Business — The Merchant Approval Portal · Rana Allam</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script>
+    if (sessionStorage.getItem('approval_unlocked') !== '1') {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('pw-gate').style.display = 'flex';
+        document.getElementById('pw-input').focus();
+      });
+    }
+    function checkPassword() {
+      var val = document.getElementById('pw-input').value;
+      if (val === 'dashboard') {
+        sessionStorage.setItem('approval_unlocked', '1');
+        document.getElementById('pw-gate').style.display = 'none';
+      } else {
+        document.getElementById('pw-error').style.display = 'block';
+        document.getElementById('pw-input').style.borderColor = '#ff6b6b';
+        document.getElementById('pw-input').value = '';
+        document.getElementById('pw-input').focus();
+      }
+    }
+  </script>
+</head>
+<body class="cs-page">
+
+  <!-- ── PASSWORD GATE ── -->
+  <div id="pw-gate" style="
+    display: none;
+    position: fixed; inset: 0; z-index: 9999;
+    background: #0F0B15;
+    flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 24px; padding: 24px;
+  ">
+    <img src="IMGs/Pasword.webp" alt="Rana Allam" style="height: 48px;" />
+    <div style="text-align: center; max-width: 360px;">
+      <h2 style="color: #fff; font-family: Inter, sans-serif; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px;">Protected Case Study</h2>
+      <p style="color: rgba(255,255,255,.5); font-family: Inter, sans-serif; font-size: .9rem; margin: 0 0 24px;">Enter the password to view this case study.</p>
+      <input
+        id="pw-input"
+        type="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        style="
+          width: 100%; box-sizing: border-box;
+          padding: 12px 16px; border-radius: 10px;
+          border: 1px solid rgba(255,255,255,.15);
+          background: rgba(255,255,255,.06);
+          color: #fff; font-family: Inter, sans-serif; font-size: 1rem;
+          outline: none; margin-bottom: 12px;
+          transition: border-color .2s;
+        "
+        onkeydown="if(event.key==='Enter') checkPassword()"
+        onfocus="this.style.borderColor='#7B2FBE'"
+        onblur="this.style.borderColor='rgba(255,255,255,.15)'"
+      />
+      <p id="pw-error" style="
+        color: #ff6b6b; font-family: Inter, sans-serif;
+        font-size: .85rem; margin: 0 0 12px; display: none;
+      ">Incorrect password. Please try again.</p>
+      <button
+        onclick="checkPassword()"
+        style="
+          width: 100%; padding: 13px; border-radius: 10px;
+          background: #7B2FBE; border: none; color: #fff;
+          font-family: Inter, sans-serif; font-size: 1rem; font-weight: 600;
+          cursor: pointer; transition: background .2s;
+        "
+        onmouseover="this.style.background='#9B4FDE'"
+        onmouseout="this.style.background='#7B2FBE'"
+      >Unlock</button>
+    </div>
+  </div>
+
+  <!-- ── NAV ── -->
+  <header class="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="IMGs/My Logo@4x.webp" alt="Rana Allam" />
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="index.html#work">Portfolio</a>
+      <a href="#contact" class="btn btn--hire">Hire Me</a>
+    </nav>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="cs-hero">
+    <div class="cs-hero__inner">
+      <div class="cs-hero__meta">
+        <span class="cs-tag">Case Study</span>
+        <span class="cs-tag cs-tag--dim">Fintech · B2B · Internal Tools</span>
+      </div>
+      <h1 class="cs-hero__title">Madfu Business — The Merchant Approval Portal</h1>
+      <p class="cs-hero__sub">
+        Four teams. One shared merchant file. Every team had different data needs, different authority levels, and different definitions of "done." The design problem wasn't just the interface — it was making four separate workflows feel like one coherent system.
+      </p>
+
+      <div class="cs-hero__stats">
+        <div class="cs-stat">
+          <span class="cs-stat__label">Teams Served</span>
+          <span class="cs-stat__value cs-stat__value--purple">4</span>
+        </div>
+        <div class="cs-stat cs-stat--divider">
+          <span class="cs-stat__label">API Integrations</span>
+          <span class="cs-stat__value cs-stat__value--purple">3</span>
+        </div>
+        <div class="cs-stat cs-stat--divider">
+          <span class="cs-stat__label">Decision Surfaces</span>
+          <span class="cs-stat__value cs-stat__value--purple">4</span>
+        </div>
+        <div class="cs-stat cs-stat--divider">
+          <span class="cs-stat__label">Outcome</span>
+          <span class="cs-stat__value cs-stat__value--green" style="font-size:1.4rem; line-height:1.2;">Manual → Automated</span>
+        </div>
+      </div>
+
+      <div class="cs-hero__details">
+        <div>
+          <span class="cs-detail__label">Company</span>
+          <span class="cs-detail__value">Madfu Business (B2B)</span>
+        </div>
+        <div>
+          <span class="cs-detail__label">My Role</span>
+          <span class="cs-detail__value">Lead Product Designer</span>
+        </div>
+        <div>
+          <span class="cs-detail__label">Platform</span>
+          <span class="cs-detail__value">Internal Web Portal</span>
+        </div>
+        <div>
+          <span class="cs-detail__label">Type</span>
+          <span class="cs-detail__value">Internal Tooling, B2B</span>
+        </div>
+      </div>
+
+      <a href="MadfuBusiness.html" class="cs-see-also">
+        <span class="cs-see-also__icon">↩</span>
+        See also: the merchant sign-up flow that feeds this system
+      </a>
+    </div>
+  </section>
+
+  <!-- ── COVER ── -->
+  <div class="cs-full-image">
+    <div class="img-ph img-ph--hero">Approval Portal — Hero Cover</div>
+  </div>
+
+  <article class="cs-body">
+
+    <!-- ── 1. CONTEXT ── -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <p class="cs-section__label">Context</p>
+        <h2 class="cs-section__title">What was actually broken</h2>
+        <p>When a merchant completed the sign-up flow, their application didn't land in a clean queue. It landed in a spreadsheet. Four different teams — Business Development, Compliance, Credit, and Operations — would pull from the same file, make notes in separate columns, send status updates over WhatsApp, and try to coordinate approvals across a process that had no single source of truth.</p>
+        <p>The sign-up flow was designed to feel simple for the merchant. The approval process, by contrast, was entirely undesigned. Everyone had a workaround. Nobody had visibility into what the other teams had already checked. Applications stalled at handoffs. Merchants got approved or rejected without a clear audit trail of why.</p>
+        <div class="cs-callout">
+          <p>The design brief wasn't "build an admin panel." It was <strong>replace a four-team coordination system that was running entirely on spreadsheets and messaging apps.</strong></p>
+        </div>
+        <p>The goal was a single internal portal where each team could do their specific part of the review — see only what they needed, take only the actions they were authorized to take — while the system tracked the full picture automatically.</p>
+      </div>
+    </section>
+
+    <!-- ── 2. THE FOUR TEAMS ── -->
+    <section class="cs-section cs-section--alt">
+      <div class="cs-section__inner">
+        <p class="cs-section__label">Structure</p>
+        <h2 class="cs-section__title">Four teams, one merchant file</h2>
+        <p>Before designing anything, the work was mapping exactly what each team did, in what order, and what decisions they needed to make. Every team had a different relationship to the merchant's data.</p>
+      </div>
+
+      <div class="cs-flow-steps">
+
+        <div class="cs-step">
+          <div class="cs-step__number">1</div>
+          <div class="cs-step__content">
+            <p class="cs-step__title">Business Development</p>
+            <p class="cs-step__desc">First contact. BD sees the full application, assigns ownership, tracks communication history, and decides whether the merchant clears the initial threshold before any compliance or credit work begins. If BD passes the application, it moves forward. If not, it stops here.</p>
+          </div>
+          <div class="cs-step__screen">
+            <div class="img-ph img-ph--desktop">BD Team — Application Queue</div>
+          </div>
+        </div>
+
+        <div class="cs-step">
+          <div class="cs-step__number">2</div>
+          <div class="cs-step__content">
+            <p class="cs-step__title">Compliance</p>
+            <p class="cs-step__desc">Document verification. Compliance enters through the same shared queue as the Credit team, then opens each merchant file to review the required documents against Saudi regulatory requirements. Each document gets an individual status. The merchant cannot proceed without full compliance sign-off.</p>
+          </div>
+          <div class="cs-step__screen">
+            <figure class="cs-figure cs-figure--admin">
+              <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Onboarding%20Request/Table.jpg" alt="Shared application queue — Compliance and Credit" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+
+        <div class="cs-step">
+          <div class="cs-step__number">3</div>
+          <div class="cs-step__content">
+            <p class="cs-step__title">Credit</p>
+            <p class="cs-step__desc">Financial assessment. Credit shares the same queue view as Compliance but opens a different set of panels inside each merchant file — WATHQ verification, IBAN check, open banking consent, and bank statement review — culminating in a credit limit decision tied to specific signatories.</p>
+          </div>
+          <div class="cs-step__screen">
+            <figure class="cs-figure cs-figure--admin">
+              <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Onboarding%20Request/Table.jpg" alt="Shared application queue — Credit team" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+
+        <div class="cs-step">
+          <div class="cs-step__number">4</div>
+          <div class="cs-step__content">
+            <p class="cs-step__title">Operations</p>
+            <p class="cs-step__desc">Final activation. Once all three prior teams have signed off, Operations generates the contract, dispatches it for e-signature, and activates the merchant account when everything is confirmed.</p>
+          </div>
+          <div class="cs-step__screen">
+            <figure class="cs-figure cs-figure--merchant">
+              <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Credit%20and%20Contract/Home/Pending/Contract.jpg" alt="Contract signing — merchant view" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── 3. BD ── -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <p class="cs-section__label">Business Development</p>
+        <h2 class="cs-section__title">The queue that didn't exist</h2>
+        <p>The BD team's version of the spreadsheet workflow was the most chaotic. Applications came in with no structure. Ownership was informal — whoever noticed it first would pick it up. There was no way to know if a colleague had already started reviewing something, no way to track where a conversation with a merchant had gone, and no record of why an application had been held or rejected.</p>
+        <p>The BD view in the portal was designed around two things: assignment and status. Every application is clearly owned. Every application has a visible stage in the overall pipeline. The BD team member can see their own queue, see unassigned applications, and access the full merchant profile. The initial pass/fail decision made by BD is documented. If BD rejects an application, the reason is recorded and the merchant is notified. If BD approves, the application advances automatically to the compliance queue.</p>
+      </div>
+      <div class="cs-images cs-images--2up cs-images--mt">
+        <figure class="cs-figure">
+          <div class="img-ph img-ph--desktop">BD — Application Queue &amp; Pipeline</div>
+        </figure>
+        <figure class="cs-figure">
+          <div class="img-ph img-ph--desktop">BD — Merchant Profile Detail</div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ── 4. COMPLIANCE ── -->
+    <section class="cs-section cs-section--alt">
+      <div class="cs-section__inner">
+        <p class="cs-section__label">Compliance</p>
+        <h2 class="cs-section__title">Seven documents, one decision</h2>
+        <p>Compliance review in the old system meant downloading attachments from a spreadsheet, opening them individually, checking each one against a mental checklist, and making a note in a cell. There was no standard for what "reviewed" meant, no record of who checked what, and no way to see if a document had been updated since the last review.</p>
+        <p>Compliance and Credit both enter through the same shared queue table. Where they diverge is inside the merchant file: a compliance officer opens the documents tab, a credit officer opens the verification and banking tabs. The table is the same; the work they do from it is entirely separate.</p>
+        <p>The compliance view within a merchant file is a document-by-document checklist with individual statuses. Each required document gets its own row: the file, the current status (pending, approved, rejected), and a notes field. The sign-off button only becomes active when every document has a final status — making the definition of "compliance review complete" unambiguous.</p>
+      </div>
+      <div class="cs-images cs-images--2up cs-images--mt">
+        <figure class="cs-figure">
+          <div class="img-ph img-ph--desktop">Compliance — Document List</div>
+        </figure>
+        <figure class="cs-figure">
+          <div class="img-ph img-ph--desktop">Compliance — Document Review &amp; Sign-Off</div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ── 5. CREDIT ── -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <p class="cs-section__label">Credit</p>
+        <h2 class="cs-section__title">Risk assessment with live data</h2>
+        <p>The Credit team's job is the most data-intensive step in the process. They're making a financial judgment about what the merchant can be trusted to borrow. That requires pulling data from two external government APIs, reviewing bank statements, and issuing a credit decision that has direct revenue implications.</p>
+      </div>
+
+      <!-- Application queue -->
+      <div class="cs-images cs-images--mt" style="max-width: 1000px; margin-left: auto; margin-right: auto; padding: 0 5%;">
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Onboarding%20Request/Table.jpg" alt="Shared application queue — Compliance and Credit" loading="lazy" />
+          <figcaption>The shared application queue — used by both Compliance and Credit. Same table, different panels when you open a merchant file.</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-section__inner cs-section__inner--mt">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title cs-subsection__title--top">Merchant Profile</h3>
+          <p>When a credit officer opens a merchant application, they see the complete profile: general business information, document attachments, and the representative information pulled from the commercial registration. The portal surfaces two views of the representative data — one for LLC structures, one for sole proprietorships — because the required fields and signatory logic differ between them.</p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--2up cs-images--mt">
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Onboarding%20Request/Merchant%20Info/1.jpg" alt="Merchant general info panel" loading="lazy" />
+          <figcaption>Merchant info tab — general business details</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Onboarding%20Request/Attachments.jpg" alt="Document attachments panel" loading="lazy" />
+          <figcaption>Attachments panel — all submitted documents in one place</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-images cs-images--2up cs-images--mt">
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Onboarding%20Request/Merchant%20Rep%20Information/2LLC.jpg" alt="LLC representative information" loading="lazy" />
+          <figcaption>Representative information — LLC structure</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Onboarding%20Request/Merchant%20Rep%20Information/2Sole.jpg" alt="Sole proprietor representative information" loading="lazy" />
+          <figcaption>Representative information — sole proprietorship</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-section__inner cs-section__inner--mt">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">AML Check</h3>
+          <p>Before any financial assessment begins, the system runs a terrorism financing and money laundering check against the merchant and their representatives. The result surfaces directly in the merchant file. A failed check blocks the credit decision from being submitted — there's no workaround, and no way to proceed without the flag being reviewed and cleared by the appropriate team.</p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--mt" style="max-width: 900px; margin-left: auto; margin-right: auto; padding: 0 5%;">
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Finance%20of%20Terrorism02.jpg" alt="AML and terrorism financing check" loading="lazy" />
+          <figcaption>AML check — terrorism financing screen, surfaced inline within the merchant file</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-section__inner cs-section__inner--mt">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">WATHQ — Live Company Verification</h3>
+          <p>WATHQ is the Saudi government's commercial registry. The portal automatically pulls company data from WATHQ when a credit officer opens a merchant file — registered name, CR number, ownership structure, management and board, capital breakdown. The officer doesn't run a separate lookup; the data surfaces inline across five tabs, matched against what the merchant submitted. If there's a discrepancy, it's visible immediately.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WATHQ flow strip -->
+    <div class="cs-flow-strip">
+      <p class="cs-flow-strip__label">WATHQ — live company data, five panels</p>
+      <div class="cs-flow-strip__row">
+        <div class="cs-flow-strip__item cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Watheq/Info%20%26%20Activities.jpg" alt="WATHQ — company info and activities" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Company info &amp; business activities — registered name, CR number, legal structure, activity codes</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Watheq/Owner.jpg" alt="WATHQ — ownership structure" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Ownership structure — shareholders, ownership percentages, and individual ID verification</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Watheq/Manager%20%26%20Board.jpg" alt="WATHQ — management and board" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Management &amp; board — appointed managers, authorized signatories, board membership</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Watheq/Capital.jpg" alt="WATHQ — capital" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Capital — registered capital amount and contribution breakdown</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Watheq/Stock%20Capital.jpg" alt="WATHQ — stock capital" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Stock capital — share structure and allocation across owners</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bank Review -->
+    <section class="cs-section cs-section--alt">
+      <div class="cs-section__inner">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title cs-subsection__title--top">Bank Review — Requesting Open Banking Consent</h3>
+          <p>Bank statement review works as a two-sided flow. The credit officer initiates it by generating an open banking consent link directly from the portal and sending it to the merchant. The merchant then completes their side — connecting their bank account via IBAN — and the portal returns the bank data automatically. The credit officer never needs to handle raw PDFs or manually log what they found.</p>
+          <p>Before the merchant consents, the credit officer sees a set of clear states: no link sent yet, link generated and pending, link expired, merchant opted out, or skipped. Each state has a specific next action available.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before Consent flow strip -->
+    <div class="cs-flow-strip">
+      <p class="cs-flow-strip__label">Bank Review — Before Consent (Credit Team view)</p>
+      <div class="cs-flow-strip__row">
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/Before%20Consent/Default.jpg" alt="Bank review — default state" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Default — no consent request sent yet. Credit officer can generate a link or skip this step.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/Before%20Consent/Generated.jpg" alt="Bank review — consent link generated" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Generated — link sent to merchant. Portal shows sent status and timestamp while waiting for consent.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/Before%20Consent/Expired.jpg" alt="Bank review — consent link expired" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Expired — link timed out. Officer can regenerate and resend without losing any other review progress.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/Before%20Consent/Opt%20Out.jpg" alt="Bank review — merchant opted out" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Opted out — merchant declined open banking. This is a logged state; the team manually reviews uploaded bank statements instead.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/Before%20Consent/Skip.jpg" alt="Bank review — step skipped" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Skipped — officer proceeds without open banking. A flag is attached to the merchant file for audit purposes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Merchant side: IBAN flow -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <p class="cs-section__label">Merchant View</p>
+        <h2 class="cs-section__title">What the merchant sees: IBAN &amp; open banking</h2>
+        <p>When the credit officer generates the consent link, the merchant receives it on their portal. They go through a structured IBAN verification and open banking consent flow — entering their IBAN, confirming their bank, and authorizing the data connection. The merchant never speaks to the credit team directly; the portal handles the entire exchange.</p>
+        <p>If the IBAN doesn't match or needs to be corrected, there's a dedicated adjustment flow — not an error state with nowhere to go, but a clear path to resubmit with the correct information.</p>
+      </div>
+    </section>
+
+    <!-- IBAN flow strip -->
+    <div class="cs-flow-strip">
+      <p class="cs-flow-strip__label">IBAN &amp; Open Banking — Merchant view</p>
+      <div class="cs-flow-strip__row">
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Open%20Banking/Home/Pending/IBAN/1.0.jpg" alt="IBAN entry step 1" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Step 1 — Merchant enters IBAN. The field validates format in real time before submission.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Open%20Banking/Home/Pending/IBAN/1.1.0.jpg" alt="IBAN verification" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">IBAN submitted — system verifies against BAYAN and returns bank name and account holder for merchant to confirm.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Open%20Banking/Home/Pending/IBAN/1.1.1.jpg" alt="IBAN confirmed" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">IBAN confirmed — merchant proceeds to open banking consent step.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Open%20Banking/Home/Pending/IBAN/2.jpg" alt="Open banking consent" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Open banking consent — merchant reviews data scope and authorizes the connection to their bank.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Open%20Banking/Home/Pending/IBAN/2.1.jpg" alt="Consent confirmed" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Consent given — bank data connection authorized. Merchant is done; credit team is notified automatically.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Open%20Banking/Home/Pending/IBAN/2.2.jpg" alt="Open banking complete" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Complete — merchant sees confirmation. No bank credentials were shared; the connection uses open banking protocols.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- IBAN Adjustment flow -->
+    <section class="cs-section cs-section--alt">
+      <div class="cs-section__inner">
+        <p class="cs-section__label">IBAN Adjustment</p>
+        <h2 class="cs-section__title">When the IBAN needs to change</h2>
+        <p>If the merchant's IBAN doesn't match the legal entity on file, or if the credit team requests a correction, the merchant goes through a dedicated adjustment flow rather than starting from scratch. The adjustment preserves everything already reviewed — only the IBAN is updated, reverified, and resubmitted for the credit team to confirm.</p>
+      </div>
+    </section>
+
+    <!-- Adjustment IBAN strip -->
+    <div class="cs-flow-strip">
+      <p class="cs-flow-strip__label">IBAN Adjustment flow — Merchant view</p>
+      <div class="cs-flow-strip__row">
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Open%20Banking/Home/Pending/AdjustmentIBAN/2.jpg" alt="IBAN adjustment — step 1" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Adjustment initiated — merchant enters the corrected IBAN. Previous IBAN shown for reference.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Open%20Banking/Home/Pending/AdjustmentIBAN/2.1.jpg" alt="IBAN adjustment — verification" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">New IBAN verified via BAYAN — bank name and account holder returned for merchant confirmation.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Open%20Banking/Home/Pending/AdjustmentIBAN/2.1.5.jpg" alt="IBAN adjustment — confirmed" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Adjustment confirmed — new IBAN replaces the previous one in the merchant file.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Open%20Banking/Home/Pending/AdjustmentIBAN/2.2-1.jpg" alt="IBAN adjustment — complete" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Complete — credit team is notified of the update and can re-review the banking data.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- After Consent -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <p class="cs-section__label">Credit — Bank Data Review</p>
+        <h2 class="cs-section__title">After consent: reviewing what came back</h2>
+        <p>Once the merchant completes the open banking flow, the portal notifies the credit officer and populates the bank review section with the returned data. The officer reviews the bank statements directly in the portal, can request adjustments to the data scope if needed, and submits a final bank review decision that feeds into the credit limit assessment.</p>
+        <p>The adjustment capability is a key detail: if the statements show a date range or account scope that needs to change, the officer can request a specific adjustment, log the reason, and track the adjustment through to completion — all without leaving the merchant file.</p>
+      </div>
+    </section>
+
+    <!-- After Consent strip -->
+    <div class="cs-flow-strip">
+      <p class="cs-flow-strip__label">Bank Review — After Consent (Credit Team view)</p>
+      <div class="cs-flow-strip__row">
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/After%20Consent/Default.jpg" alt="After consent — default" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Consent received — portal fetches bank data and notifies the credit officer the file is ready for review.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/After%20Consent/BankStatement.jpg" alt="Bank statement review" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Bank statements — account activity surfaced inline. Officer reviews transactions, balance trends, and revenue patterns.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/After%20Consent/BankStatement-Adjust.jpg" alt="Requesting bank statement adjustment" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Adjustment requested — officer specifies what needs to change in the bank data scope.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/After%20Consent/BankStatement-Adjust%20Reason.jpg" alt="Adjustment reason" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Reason logged — adjustment reason is required and becomes part of the merchant's permanent audit trail.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/After%20Consent/BankStatement-AdjustSent.jpg" alt="Adjustment sent" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Sent — merchant notified. Portal shows pending status while the adjustment is in progress.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/After%20Consent/Finish-Pending.jpg" alt="Review complete — pending decision" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Pending decision — bank review complete, waiting for credit officer to submit the final assessment.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 480px;">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/After%20Consent/Finish.jpg" alt="Bank review finished" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Finished — bank review decision submitted. Application advances automatically to the credit limit step.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 6. OPERATIONS ── -->
+    <section class="cs-section cs-section--alt">
+      <div class="cs-section__inner">
+        <p class="cs-section__label">Operations &amp; Contract</p>
+        <h2 class="cs-section__title">Financing limit, contract, activation</h2>
+        <p>Once the credit decision is submitted, the merchant is notified of their approved financing limit on their portal. The limit is the output of the credit team's full assessment — WATHQ data, BAYAN IBAN verification, and bank statement review all feed into the number the merchant sees. It's not shown as a provisional figure; it's the confirmed limit that will appear in their contract.</p>
+      </div>
+    </section>
+
+    <!-- Financing Limit strip -->
+    <div class="cs-flow-strip">
+      <p class="cs-flow-strip__label">Financing Limit — Merchant view</p>
+      <div class="cs-flow-strip__row">
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Credit%20and%20Contract/Home/Pending/Financing%20Limit/1.jpg" alt="Financing limit — step 1" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Limit revealed — merchant sees their approved financing amount for the first time.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Credit%20and%20Contract/Home/Pending/Financing%20Limit/2.jpg" alt="Financing limit — step 2" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Limit details — breakdown of what the limit covers and how it can be used.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Credit%20and%20Contract/Home/Pending/Financing%20Limit/2-1.jpg" alt="Financing limit — confirmation" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Merchant acknowledges the limit before proceeding to contract review.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Credit%20and%20Contract/Home/Pending/Financing%20Limit/2.5.jpg" alt="Financing limit — final step" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Confirmed — merchant proceeds to the contract, generated with the approved limit pre-filled.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contract strip -->
+    <div class="cs-flow-strip cs-flow-strip--after">
+      <p class="cs-flow-strip__label">Contract — Merchant view</p>
+      <div class="cs-flow-strip__row">
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Credit%20and%20Contract/Home/Pending/Contract.jpg" alt="Contract — review" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Contract displayed — auto-filled with legal entity name, IBAN, credit limit, and signatory details from the merchant file.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Credit%20and%20Contract/Home/Pending/Contract-1.jpg" alt="Contract — signing" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">E-signature — merchant signs the contract digitally. No printing, no scanning, no back-and-forth over email.</p>
+        </div>
+        <div class="cs-flow-strip__item" style="flex: 0 0 460px;">
+          <img src="Case%20Studies/Madfu%20B2b/Merchant%20Portal/Credit%20and%20Contract/Home/Pending/ContractSuccess.jpg" alt="Contract signed — success" loading="lazy" style="aspect-ratio: 7/5; object-fit: cover; object-position: left top;" />
+          <p class="cs-flow-strip__annotation">Signed — contract confirmed. Operations activates the account. The merchant is ready to use Madfu Business.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 7. WHAT MADE THIS HARD ── -->
+    <section class="cs-section">
+      <div class="cs-section__inner">
+        <p class="cs-section__label">Design Challenges</p>
+        <h2 class="cs-section__title">What made this hard to design</h2>
+
+        <div class="cs-subsection" style="margin-top: 32px;">
+          <h3 class="cs-subsection__title cs-subsection__title--top">Designing a two-sided flow without a seam</h3>
+          <p>The open banking step is the most visible example of the two-surface structure: the credit officer sends a request, the merchant completes their side, and the portal updates the credit team's view automatically. From both sides, the experience feels like a single linear process. Underneath, it's a handoff between two completely separate surfaces that have to stay in sync without either party waiting, polling, or chasing the other through a messaging app.</p>
+        </div>
+
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">Permissions without confusion</h3>
+          <p>Each team can only take actions appropriate to their stage. BD can assign and pass or reject. Compliance can approve or reject documents. Credit can run verifications and submit a decision. Operations can generate contracts and activate accounts. But the merchant's file — the same underlying data — has to be visible to all of them in a way that feels complete, not redacted. The solution was a single merchant record with role-scoped action panels. The data is shared; the actions aren't.</p>
+        </div>
+
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">Making the audit trail effortless</h3>
+          <p>Compliance requirements meant that every decision had to be logged with a timestamp and the identity of the person who made it. In the portal, the audit trail is automatic. Every status change, every document approval, every adjustment reason, every credit decision is logged without the team member needing to do anything beyond the action itself. The logging is invisible — it happens in the background. What the team member sees is a clean interface for doing their job.</p>
+        </div>
+
+        <div class="cs-callout">
+          <p>The hardest design challenge wasn't any one screen. It was making sure that <strong>every team always knew exactly where the application stood, without needing to ask anyone.</strong></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── 8. RESILIENCE ── -->
+    <section class="cs-section cs-section--resilience">
+      <div class="cs-section__inner">
+        <p class="cs-section__label cs-section__label--light">System Resilience</p>
+        <h2 class="cs-section__title cs-section__title--light">Designing for the moments it breaks</h2>
+        <p>An internal tool handling financial approvals and regulatory documents cannot treat error states as edge cases. API calls fail. Consent links expire. Identity checks return mismatches. The portal had to handle all of these without leaving a team member stranded mid-review — and without blocking the entire workflow when only one part of it has a problem.</p>
+
+        <div class="cs-subsection" style="margin-top: 32px;">
+          <h3 class="cs-subsection__title">API failure — open banking consent</h3>
+          <p>If the open banking API fails when the credit officer tries to generate a consent link, the portal shows a specific error state with a retry action — not a generic message, not a blank panel. The failure is logged. The officer can retry immediately or continue with the manual bank statement review path. A failed API call doesn't block the credit review; it creates a logged flag requiring manual confirmation before the credit decision can be submitted.</p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--2up cs-images--mt">
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/Before%20Consent/API%20Error.jpg" alt="Open banking API error state" loading="lazy" />
+          <figcaption>API Error — consent link generation failed. Specific error message, retry action, and fallback path all visible.</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/Before%20Consent/Expired.jpg" alt="Consent link expired state" loading="lazy" />
+          <figcaption>Expired — consent link timed out before the merchant completed it. One-click regeneration, no data lost.</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-section__inner cs-section__inner--mt">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">Bank data errors after consent</h3>
+          <p>After the merchant consents, the bank data return can fail for several reasons — a connection timeout, an unsupported account type, or a data format issue from the bank. These aren't presented as dead ends. The portal shows the specific error with a clear explanation and the available recovery actions: retry the data pull, request a different account, or fall back to manual statement review. The credit review is not blocked. Only the automated data pull is in a failed state, and there's always a manual path forward.</p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--2up cs-images--mt">
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/After%20Consent/Error.jpg" alt="Bank data error state" loading="lazy" />
+          <figcaption>Bank data error — data pull failed after consent. Specific error type shown with available next actions.</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Bank%20Review/After%20Consent/Error2.jpg" alt="Bank data error variant" loading="lazy" />
+          <figcaption>Secondary error state — different failure mode, same principle: specific message and a clear path forward.</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-section__inner cs-section__inner--mt">
+        <div class="cs-subsection">
+          <h3 class="cs-subsection__title">Identity verification failures</h3>
+          <p>The AZM identity verification check can fail for the merchant's authorized representatives — this is distinct from the AML check and can happen due to mismatches between the submitted ID and the commercial registration data. The portal shows separate failure states for LLC structures (where multiple representatives may need to be verified) and sole proprietorships (single owner). In both cases, the failure is specific: which representative failed, why, and what the credit officer needs to do next.</p>
+        </div>
+      </div>
+
+      <div class="cs-images cs-images--2up cs-images--mt">
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Onboarding%20Request/Merchant%20Rep%20Information/AzmFailLLC.jpg" alt="AZM identity check failure — LLC" loading="lazy" />
+          <figcaption>AZM failure — LLC structure. Specific representative highlighted, failure reason shown, action required indicated.</figcaption>
+        </figure>
+        <figure class="cs-figure cs-figure--admin">
+          <img src="Case%20Studies/Madfu%20B2b/Admin%20Portal/Merchant%20Onboarding/Credit%20Team/Onboarding%20Request/Merchant%20Rep%20Information/AzmFailSole.jpg" alt="AZM identity check failure — sole proprietor" loading="lazy" />
+          <figcaption>AZM failure — sole proprietorship. Single owner highlighted, same structured failure treatment.</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-section__inner cs-section__inner--mt">
+        <div class="cs-callout">
+          <p>Error states were treated as first-class design problems. <strong>Every broken state has a recovery path. No broken state leaves the team member without a next action.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── REFLECTION ── -->
+    <section class="cs-section cs-section--dark">
+      <div class="cs-section__inner">
+        <p class="cs-section__label cs-section__label--light">Reflection</p>
+        <h2 class="cs-section__title cs-section__title--light">What this project was really about</h2>
+        <p class="cs-outcome__note">Internal tools don't get praised for being beautiful. They get evaluated by whether the people who use them every day feel like the tool is helping or getting in the way. The benchmark for the approval portal was never aesthetics — it was whether a credit officer could open a merchant file, run a WATHQ check, send a consent link, review the returned bank statements, and submit a credit decision without switching tabs, sending a message, or losing track of what was still outstanding.</p>
+
+        <div class="cs-callout" style="background: rgba(255,255,255,.06); border-left-color: rgba(255,255,255,.3);">
+          <p style="color: rgba(255,255,255,.9) !important;">The merchant doesn't see this portal. They see a clean sign-up flow and a notification when they're approved. <strong style="color: #fff !important;">The approval portal is the invisible infrastructure that makes that experience possible.</strong></p>
+        </div>
+
+        <p>Four teams with separate workflows, separate data needs, and separate authority levels now work from a single system. The open banking handoff that used to require a phone call and a PDF attachment is a two-sided flow that completes itself. The audit trail writes itself. The handoffs happen without WhatsApp messages. The complexity didn't go away — it got absorbed by the design, so the people using the system don't have to manage it manually.</p>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- ── NEXT PROJECT ── -->
+  <div class="cs-next" id="contact">
+    <p class="cs-next__label">Next Case Study</p>
+    <h2 class="cs-next__title">Madfu — Redesigning the KYC &amp; Sign-Up Flow</h2>
+    <a href="KYC.html" class="btn btn--primary">View Case Study →</a>
+  </div>
+
+</body>
+</html>
